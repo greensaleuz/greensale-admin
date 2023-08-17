@@ -2,7 +2,6 @@
 import Setting from '../common/Setting.vue'
 import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
-
 onMounted(() => {
   initFlowbite()
 })
@@ -11,7 +10,7 @@ onMounted(() => {
   <nav
     class="fixed top-0 left-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700"
   >
-    <div class="px-3 py-3 lg:px-5 lg:pl-3">
+    <div class="px-3 py-2 lg:px-5 lg:pl-3">
       <div class="flex items-center justify-between">
         <div class="flex items-center justify-start">
       
@@ -28,6 +27,7 @@ onMounted(() => {
             >
           </a>
         </div>
+        
         <Setting></Setting>
       </div>
     </div>
