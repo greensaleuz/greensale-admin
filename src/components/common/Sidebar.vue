@@ -1,13 +1,17 @@
 <script setup lang="ts">
-import IconCategory from '../icons/IconCategories.vue'
-import IconUser from '../icons/IconUsers.vue'
-import IconHome from '../icons/IconHome.vue'
-import IconAdmin from '../icons/IconAdmin.vue'
-import IconInfo from '../icons/IconInfo.vue'
-import IconAnnouncement from '../icons/IconAnnouncement.vue'
+  import IconCategory from '../icons/IconCategories.vue'
+  import IconUser from '../icons/IconUsers.vue'
+  import IconHome from '../icons/IconHome.vue'
+  import IconAdmin from '../icons/IconAdmin.vue'
+  import IconInfo from '../icons/IconInfo.vue'
+  import IconAnnouncement from '../icons/IconAnnouncement.vue'
 
-import { onMounted } from 'vue'
-import { initFlowbite } from 'flowbite'
+  import { onMounted } from 'vue'
+  import { initFlowbite } from 'flowbite'
+
+  import { useI18n } from 'vue-i18n';
+  
+  const { t } = useI18n();
 
 onMounted(() => {
   initFlowbite()
@@ -28,7 +32,7 @@ onMounted(() => {
               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
             >
               <IconHome></IconHome>
-              <span class="ml-3">Asosiy</span>
+              <span class="ml-3">{{ $t("dashboard")}}</span>
             </a>
           </RouterLink>
         </li>
@@ -39,7 +43,7 @@ onMounted(() => {
             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
           >
             <IconAdmin></IconAdmin>
-            <span class="flex-1 ml-3 whitespace-nowrap">Adminlar</span>
+            <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("admins")}}</span>
           </a>
           </RouterLink>
         </li>
@@ -50,7 +54,7 @@ onMounted(() => {
             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
           >
             <IconUser></IconUser>
-            <span class="flex-1 ml-3 whitespace-nowrap">Foydalanuvchilar</span>
+            <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("users")}}</span>
           </a>
           </RouterLink>
         </li>
@@ -61,7 +65,7 @@ onMounted(() => {
             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
           >
             <IconCategory></IconCategory>
-            <span class="flex-1 ml-3 whitespace-nowrap">Toifalar</span>
+            <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("categories")}}r</span>
           </a>
           </RouterLink>
         </li>
@@ -74,7 +78,7 @@ onMounted(() => {
             data-collapse-toggle="dropdown-example"
           >
             <IconAnnouncement></IconAnnouncement>
-            <span class="flex-1 ml-3 text-left whitespace-nowrap">E'lonlar</span>
+            <span class="flex-1 ml-3 text-left whitespace-nowrap">{{ $t("announcement")}}</span>
             <svg
               class="w-3 h-3"
               aria-hidden="true"
@@ -97,7 +101,7 @@ onMounted(() => {
               <a
                 href="#"
                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                >Sotuvchilar e'loni</a
+                >{{ $t("sellerannnouncements")}}</a
               >
               </RouterLink>
             </li>
@@ -106,7 +110,7 @@ onMounted(() => {
               <a
                 href="#"
                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                >Oluvchilar e'loni</a
+                >{{ $t("buyerannouncements")}}</a
               >
               </RouterLink>
             </li>
@@ -115,7 +119,7 @@ onMounted(() => {
               <a
                 href="#"
                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                >Yukxonalar e'loni</a
+                >{{ $t("storageannouncements")}}</a
               >
               </RouterLink>
             </li>
@@ -128,7 +132,7 @@ onMounted(() => {
             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
           >
             <IconInfo></IconInfo>
-            <span class="flex-1 ml-3 whitespace-nowrap">Ma'lumotlar</span>
+            <span class="flex-1 ml-3 whitespace-nowrap">{{  $t ("informations") }}</span>
           </a>
           </RouterLink>
         </li>

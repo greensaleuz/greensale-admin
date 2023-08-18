@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import Icon from '../icons/IconHelp.vue'
 import IconSetting from '../icons/IconSetting.vue'
-
+import IconLegOut from '../icons/IconLegOut.vue'
 import ThemeSwitcher from '@/components/common/ThemeSwitcher.vue'
-
+import LanguageSwitcher from "../common/LanguageSwitcher.vue"
 
 
 import { ref } from 'vue';
@@ -60,9 +60,10 @@ import { initFlowbite } from 'flowbite'
                 </li>
                
                 <li>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Earnings</a>
+                 <LanguageSwitcher></LanguageSwitcher>
                 </li>
                 <li>
+                  <IconLegOut></IconLegOut>
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Chiqish</a>
                 </li>
               </ul>

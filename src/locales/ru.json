@@ -1,0 +1,16 @@
+{
+    "dashboard": "Главная панель",
+    "admins": "Админы",
+    "users": "Пользователи",
+    "announcements":"Объявления",
+    "buyerannouncements": "Объявления покупателя",
+    "sellerannnouncements": "Объявления продавца",
+    "storageannouncements": "Объявления о хранении",
+    "categories": "Категории",
+    "informations": "Информация",
+    "settings": "Настройки",
+    
+    "en":"Английский",
+    "ru": "Русский",
+    "uz":"Узбекский"
+    }

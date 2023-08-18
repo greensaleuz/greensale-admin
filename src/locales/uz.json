@@ -1,0 +1,16 @@
+{
+    "dashboard": "Asosiy",
+    "admins": "Adminlar",
+    "users": "Foydalanuvchilar",
+    "announcements":"E'lonlar",
+    "buyerannouncements": "Oluvchilar e'loni",
+    "sellerannnouncements": "Sotuvchilar e'loni",
+    "storageannouncements": "YUkxonalar e'loni",
+    "categories": "Toifalar",
+    "informations": "Ma'lumotlar",
+    "settings": "Sozlamalar",
+    
+    "en":"Ingilizcha",
+    "ru":"Ruscha",
+    "uz":"O'zbekcha"
+    }

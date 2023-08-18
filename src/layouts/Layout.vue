@@ -3,6 +3,8 @@ import Header from '../components/common/Header.vue'
 import Sidebar from '../components/common/Sidebar.vue'
 import Footer from '../components/common/Footer.vue'
 import ThemeSetter from '../components/common/ThemeSetter.vue'
+import FlowBiteSetup from '../FlowbiteSetup.vue'
+
 import { RouterView } from 'vue-router'
 </script>
 
