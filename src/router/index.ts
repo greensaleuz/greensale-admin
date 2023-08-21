@@ -29,8 +29,16 @@ const router = createRouter({
           component: ()=> import("../views/users/UserView.vue")
         },
         {
-          path: 'announcement',
-          component: () => import('../views/announcements/AnnouncementView.vue'),
+          path:'buyerannouncements',
+          component : () => import ("../views/announcements/BuyerAnnouncementView.vue")
+        },
+        {
+          path:'sellerannnouncements',
+          component: () => import ("../views/announcements/SellerAnnouncementView.vue")
+        },
+        {
+          path:'storageannouncements',
+          component:()=> import ("../views/announcements/StoragesAnnouncement.vue")
         },
         {
           path: 'admins',
