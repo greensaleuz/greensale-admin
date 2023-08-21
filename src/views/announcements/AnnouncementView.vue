@@ -4,6 +4,6 @@
 
 <template>
    <div class="flex-wrap">
-     category
+    Announcement
    </div>
 </template>
