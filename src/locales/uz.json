@@ -5,12 +5,14 @@
     "announcements":"E'lonlar",
     "buyerannouncements": "Oluvchilar e'loni",
     "sellerannnouncements": "Sotuvchilar e'loni",
-    "storageannouncements": "YUkxonalar e'loni",
+    "storageannouncements": "Yukxonalar e'loni",
     "categories": "Toifalar",
     "informations": "Ma'lumotlar",
     "settings": "Sozlamalar",
     
-    "en":"Ingilizcha",
+    "theme":"Mavzu",
+
+    "en":"Inglizcha",
     "ru":"Ruscha",
     "uz":"O'zbekcha"
     }

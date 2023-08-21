@@ -1,5 +1,5 @@
 {
-"dashboard": "Dashboard",
+"dashboard": "Das",
 "admins": "Admins",
 "users": "Users",
 "announcements":"Announcements",
@@ -9,6 +9,8 @@
 "categories": "Categories",
 "informations": "Informations",
 "settings": "Settings",
+
+"theme":"Theme",
 
 "en":"English",
 "ru":"Russian",

@@ -82,10 +82,11 @@
   </section>
 </template>
 
-<script setup Lang="ts">
+<script lang="ts">
 
 
 </script>
+
 
 
 <style scoped>
@@ -97,4 +98,3 @@
   width: 400px;
 }
 </style>
-

@@ -65,7 +65,7 @@ onMounted(() => {
             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
           >
             <IconCategory></IconCategory>
-            <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("categories")}}r</span>
+            <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("categories")}}</span>
           </a>
           </RouterLink>
         </li>
@@ -78,7 +78,7 @@ onMounted(() => {
             data-collapse-toggle="dropdown-example"
           >
             <IconAnnouncement></IconAnnouncement>
-            <span class="flex-1 ml-3 text-left whitespace-nowrap">{{ $t("announcement")}}</span>
+            <span class="flex-1 ml-3 text-left whitespace-nowrap">{{ $t("announcements")}}</span>
             <svg
               class="w-3 h-3"
               aria-hidden="true"

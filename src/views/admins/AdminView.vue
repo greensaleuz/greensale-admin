@@ -1,9 +1,15 @@
 <script setup Lang="ts">
+import Flowbitesetup from '@/FlowbiteSetup.vue'
+
+
+
+
+
+
+
 
 </script>
 
 <template>
-   <div class="flex-wrap">
-     admin
-   </div>
+   
 </template>
