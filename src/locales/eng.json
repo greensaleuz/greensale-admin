@@ -1,0 +1,18 @@
+{
+    "dashboard": "Dashboard",
+    "admins": "Admins",
+    "users": "Users",
+    "announcements":"Announcements",
+    "buyerannouncements": "Buyer announcements",
+    "sellerannnouncements": "Seller announcements",
+    "storageannouncements": "Storage announcements",
+    "categories": "Categories",
+    "informations": "Informations",
+    "settings": "Settings",
+    
+    "theme":"Theme",
+    
+    "en":"English",
+    "ru":"Russian",
+    "uz":"Uzbek"
+    }
