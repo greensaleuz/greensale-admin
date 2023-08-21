@@ -1,12 +1,14 @@
 <script setup lang = "ts">
-    import IconDashboard from '../icons/IconDashboard.vue';   
-    import IconAdmin from '../icons/IconAdmin.vue'
-    import IconCategories from '../icons/IconCategories.vue'
-    import IconUsers from '../icons/IconUsers.vue'
-    import IconInfo from '../icons/IconInfo.vue'
-    import IconAnnouncement from '../icons/IconAnnouncement.vue'        
-    import IconSettings from '../icons/IconSettings.vue'        
-import { RouterLink } from 'vue-router';
+   import IconDashboard from '../icons/IconDashboard.vue';   
+   import IconAdmin from '../icons/IconAdmin.vue'
+   import IconCategories from '../icons/IconCategories.vue'
+   import IconUsers from '../icons/IconUsers.vue'
+   import IconInfo from '../icons/IconInfo.vue'
+   import IconAnnouncement from '../icons/IconAnnouncement.vue'        
+   import IconSettings from '../icons/IconSettings.vue' 
+   import { useI18n } from 'vue-i18n';
+   const { t } = useI18n();      
+   //import { RouterLink } from 'vue-router';
 </script>
 <template>
 
@@ -17,7 +19,7 @@ import { RouterLink } from 'vue-router';
             <RouterLink to="/dashboard">
                <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                   <IconDashboard></IconDashboard>
-                  <span class="ml-3">Dashboard</span>
+                  <span class="ml-3">{{ $t("dashboard") }}</span>
                </div>
             </RouterLink>
          </li>
@@ -25,7 +27,7 @@ import { RouterLink } from 'vue-router';
             <RouterLink to="/admins">
                <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                   <IconAdmin></IconAdmin>
-                  <span class="flex-1 ml-3 whitespace-nowrap">Admins</span>
+                  <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("admins") }}</span>
                </div>
             </RouterLink>
          </li>
@@ -33,7 +35,7 @@ import { RouterLink } from 'vue-router';
             <RouterLink to="/users">
                <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                   <IconUsers></IconUsers>
-                  <span class="flex-1 ml-3 whitespace-nowrap">Users</span>
+                  <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("users") }}</span>
                </div>
             </RouterLink>
          </li>
@@ -41,21 +43,21 @@ import { RouterLink } from 'vue-router';
             <RouterLink to="/categories">
                <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                   <IconCategories></IconCategories>
-                  <span class="flex-1 ml-3 whitespace-nowrap">Categories</span>
+                  <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("categories") }}</span>
                </div>
             </RouterLink>
          </li>
          <li>
             <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                 <IconAnnouncement></IconAnnouncement>
-               <span class="flex-1 ml-3 whitespace-nowrap">Announcement</span>
+               <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("announcement") }}</span>
             </a>
          </li>
          <li>
             <RouterLink to="/info">  
                <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                   <IconInfo></IconInfo>
-                  <span class="flex-1 ml-3 whitespace-nowrap">Informations</span>
+                  <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("informations") }}</span>
                </div>
             </RouterLink>
          </li>
@@ -63,7 +65,7 @@ import { RouterLink } from 'vue-router';
             <RouterLink to="/settings">
                <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                   <IconSettings></IconSettings>
-                  <span class="flex-1 ml-3 whitespace-nowrap">Settings</span>
+                  <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("settings") }}</span>
                </div>
          </RouterLink>
          </li>

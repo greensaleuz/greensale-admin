@@ -1,6 +1,11 @@
 <script setup lang="ts">
   import ThemeSwitcher from "@/components/common/ThemeSwitcher.vue";
   import LanguageSwitcher from "./LanguageSwitcher.vue";
+  // import onMounted from 'vue'
+  // import initFlowbite  from 'flowbite'
+  // onMounted(() => {
+  //   initFlowbite()
+  // })
 </script>
 <template>
 <nav class="fixed top-0 left-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -19,8 +24,8 @@
         </a>
       </div>
       <div class="flex items-center">
-          <LanguageSwitcher></LanguageSwitcher>
-          <ThemeSwitcher></ThemeSwitcher>
+        <LanguageSwitcher></LanguageSwitcher>
+        <ThemeSwitcher></ThemeSwitcher>
           <div class="flex items-center ml-3">
             <div>
               <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
