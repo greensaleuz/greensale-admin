@@ -5,7 +5,7 @@
     "announcements":"E'lonlar",
     "buyerannouncements": "Oluvchilar e'loni",
     "sellerannnouncements": "Sotuvchilar e'loni",
-    "storageannouncements": "Yukxonalar e'loni",
+    "storagsannouncements": "Yukxonalar e'loni",
     "categories": "Toifalar",
     "informations": "Ma'lumotlar",
     "settings": "Sozlamalar",
@@ -14,5 +14,8 @@
 
     "en":"Inglizcha",
     "ru":"Ruscha",
-    "uz":"O'zbekcha"
+    "uz":"O'zbekcha",
+
+    "edit":"Tahrirlash",
+    "delete":"O'chirish"
     }

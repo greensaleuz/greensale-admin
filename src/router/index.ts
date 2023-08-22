@@ -21,15 +21,15 @@ const router = createRouter({
           component : () => import ("../views/users/UserView.vue")
         },
         {
-          path:'buyerannouncements',
-          component : () => import ("../views/announcements/BuyerAnnouncementView.vue")
+          path:'buyerannnouncements',
+          component:()=>import ("../views/announcements/BuyerAnnouncementView.vue")
         },
         {
-          path:'sellerannnouncements',
-          component: () => import ("../views/announcements/SellerAnnouncementView.vue")
+          path:'sellerannouncements',
+          component:()=> import ("../views/announcements/SellerAnnouncementView.vue")
         },
         {
-          path:'storageannouncements',
+          path:'storagsannouncements',
           component:()=> import ("../views/announcements/StoragesAnnouncement.vue")
         },
         {

@@ -1,43 +1,69 @@
-<script setup Lang="ts">
+<script lang="ts">
+import { defineComponent } from 'vue';
+import  { StorageAnnouncementViewModel }  from '@/viewmodels/StorageAnnouncementViewModel';
+import StorageAnnouncementViewComponent from '@/components/annoncements/storageannouncements/StorageAnnouncementViewComponent.vue';
 
+import axios from '@/plugins/axios';
+
+export default defineComponent({
+  components:{
+    StorageAnnouncementViewComponent
+  },
+  data() {
+    return {
+      postsList : [] as StorageAnnouncementViewModel[]
+    }
+  },
+  methods:{
+    async getDataAsync(){
+        var response = await axios.get<StorageAnnouncementViewModel[]>("/api/common/seller/post?page=1"); 
+        this.postsList = response.data;
+        console.log(this.postsList);
+    }
+  },
+  setup(){
+ 
+  },
+  async mounted() {
+      await this.getDataAsync();
+  },
+});
 </script>
 
 <template>
-   <div class="flex-wrap">
-    <nav aria-label="Page navigation example">
-  <ul class="flex items-center -space-x-px h-8 text-sm">
-    <li>
-      <a href="#" class="flex items-center justify-center px-3 h-8 ml-80 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-        <span class="sr-only">Previous</span>
-        <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-        </svg>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-    </li>
-    <li>
-      <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-    </li>
-    <li>
-      <a href="#" aria-current="page" class="z-10 flex items-center justify-center px-3 h-8 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-    </li>
-    <li>
-      <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-    </li>
-    <li>
-      <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-    </li>
-    <li>
-      <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-        <span class="sr-only">Next</span>
-        <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-        </svg>
-      </a>
-    </li>
+  <ul> 
+    <div class="cart_wrapper">
+     <template v-for="element in postsList">
+       
+      <StorageAnnouncementViewComponent
+        :id=element.id
+        :fullName=element.fullName
+        :userPhoneNumber=element.userPhoneNumber
+        :postPhoneNumber = element.postPhoneNumber
+        :categoryName=element.categoryName
+        :title=element.title
+        :description=element.description
+        :price=element.price
+        :capacity=element.capacity
+        :capacityMeasure=element.capacityMeasure
+        :type=element.type
+        :region=element.region
+        :district=element.district
+        :address=element.address
+        :status=element.status
+        :createdAt=element.createdAt
+        :updatedAt=element.updatedAt
+        :buyerPostsImages=element.buyerPostsImages
+      ></StorageAnnouncementViewComponent>
+    
+    </template>  
+    </div> 
   </ul>
-</nav>
-   </div>
 </template>
+<style scoped>
+.cart_wrapper{
+    display: flex                                                                                    ;
+    flex-wrap: wrap;
+}
+
+</style>

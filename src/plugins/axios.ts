@@ -1,8 +1,9 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: "http://95.130.227.180:5000"
+  baseURL: "http://95.130.227.68:8080"
 });
+
 
 // Interceptors for handling common scenarios
 instance.interceptors.response.use(

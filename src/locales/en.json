@@ -1,11 +1,11 @@
 {
-"dashboard": "Das",
+"dashboard": "Dashboard",
 "admins": "Admins",
 "users": "Users",
 "announcements":"Announcements",
 "buyerannouncements": "Buyer announcements",
 "sellerannnouncements": "Seller announcements",
-"storageannouncements": "Storage announcements",
+"storagsannouncements": "Storage announcements",
 "categories": "Categories",
 "informations": "Informations",
 "settings": "Settings",
@@ -14,5 +14,8 @@
 
 "en":"English",
 "ru":"Russian",
-"uz":"Uzbek"
+"uz":"Uzbek",
+
+"edit":"Edit",
+"delete":"Delete"
 }
