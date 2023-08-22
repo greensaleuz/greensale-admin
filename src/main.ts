@@ -8,6 +8,8 @@ import './index.css'
 import router from './router'
 import i18n from './locales/i18n'
 
+import './index.css'
+
 const app = createApp(App)
 
 app.use(createPinia())
