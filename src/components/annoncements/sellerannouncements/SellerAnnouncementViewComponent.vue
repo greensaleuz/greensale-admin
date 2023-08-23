@@ -55,17 +55,16 @@ export default defineComponent({
 
 <template>
     <div
-    class="flex-none pt-1 pb-2 max-w-xl bg-gray-50 border my-1 border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 mx-1"
+    class="max-w-sm  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700"
   >
     <a href="#">
       <img
-        style="height: 55%; width: 96%; object-fit: cover"
-        class="rounded-t-lg m-1"
+        class="rounded-t-lg w-full"
         src="@/images/images (8).jpg"
       />
     </a>
 
-    <div class="px-5">
+    <div class="">
       <div class="flex">
         <IconLocation class="pt-1"></IconLocation>
         <div class="flex pt-1 gapp">
@@ -78,13 +77,13 @@ export default defineComponent({
         </div>
       </div>
       
-      <div class="line"></div>
+      <div class="line "></div>
         <div>
-      <h4 class=" text-2xl tracking-tight text-black dark:text-white">{{ title }}</h4>
-      <h4 class=" text-xl tracking-tight black dark:text-white">{{ price }} so'm dan {{ capacity }}{{ capacityMeasure }}</h4>
-      <p class=" font-normal text-gray-700 dark:text-gray-400">{{ description }}</p>
+      <h4 class=" text-3xl tracking-tight text-black dark:text-white px-2">{{ title }}</h4>
+      <h4 class=" text-xl tracking-tight black dark:text-white px-2">{{ price }} so'm dan {{ capacity }}{{ capacityMeasure }}</h4>
+      <p class=" font-normal text-gray-700 dark:text-gray-400 px-2">{{ description }}</p>
       </div>
-      <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1 text-center mt-1 mb-3">Ko'proq ma'lumot</button>
+      <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm  py-1  text-center px-2 mx-2  mt-1 mb-3">Ko'proq ma'lumot</button>
 
     </div>
   </div>

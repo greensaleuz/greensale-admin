@@ -17,5 +17,9 @@
 "uz":"Uzbek",
 
 "edit":"Edit",
-"delete":"Delete"
+"delete":"Delete",
+"create":"Create",
+
+"enter_a_category_name":"Enter a category name",
+"add_a_category":"Add a category"
 }

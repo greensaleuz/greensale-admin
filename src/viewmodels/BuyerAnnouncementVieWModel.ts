@@ -16,5 +16,5 @@ export class BuyerViewModel{
     status: Number = 0;
     createdAt: Date=new Date();
     updatedAt: Date=new Date();
-    buyerPostsImages: String[] = [];
+    mainImage: String[] = [];
 }

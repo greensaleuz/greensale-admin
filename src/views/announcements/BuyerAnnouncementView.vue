@@ -34,7 +34,6 @@ export default defineComponent({
   <ul> 
     <div class="cart_wrapper">
      <template v-for="element in postsList">
-       
       <BuyerAnnouncementViewComponent
         :id=element.id
         :fullName=element.fullName
@@ -53,9 +52,8 @@ export default defineComponent({
         :status=element.status
         :createdAt=element.createdAt
         :updatedAt=element.updatedAt
-        :buyerPostsImages=element.buyerPostsImages
+        :mainImage=element.mainImage
       ></BuyerAnnouncementViewComponent>
-    
     </template>  
     </div> 
   </ul>

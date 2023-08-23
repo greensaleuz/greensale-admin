@@ -35,12 +35,13 @@ export default defineComponent({
     status: Number,
     createdAt: Date,
     updatedAt: Date,
-    imagePath: String
+    mainImage: String
   },
   methods: {
     load() {
       this.baseURL = axios.defaults.baseURL!
-      this.imageFullPath = this.baseURL + '/' + this.imagePath
+      this.imageFullPath = this.baseURL + '//' + this.mainImage
+      console.log(this.imageFullPath)
       this.createdAtString = formatDate(this.createdAt!)
       this.updatedAtString = formatDate(this.updatedAt!)
     }
@@ -51,21 +52,19 @@ export default defineComponent({
 })
 </script>
 
-
-
 <template>
   <div
-    class="flex-none pt-1 pb-2 max-w-xl bg-gray-50 border my-1 border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 mx-1"
+    class="flex-none pb-2 max-w-sm bg-gray-50 border my-1 border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 mx-1"
   >
     <a href="#">
       <img
-        style="height: 55%; width: 96%; object-fit: cover"
-        class="rounded-t-lg m-1"
-        src="@/images/images (8).jpg"
+        class="rounded-t-lg"
+        v-bind:src="imageFullPath"
+        style="width: 290px; height: 200px"
       />
     </a>
 
-    <div class="px-5">
+    <div class="">
       <div class="flex">
         <IconLocation class="pt-1"></IconLocation>
         <div class="flex pt-1 gapp">
@@ -80,27 +79,14 @@ export default defineComponent({
       
       <div class="line"></div>
         <div>
-      <h4 class=" text-2xl tracking-tight text-black dark:text-white">{{ title }}</h4>
-      <h4 class=" text-xl tracking-tight black dark:text-white">{{ price }} so'm dan {{ capacity }}{{ capacityMeasure }}</h4>
-      <p class=" font-normal text-gray-700 dark:text-gray-400">{{ description }}</p>
+      <h4 class=" text-2xl tracking-tight text-black dark:text-white px-2">{{ title }}</h4>
+      <h4 class=" text-xl tracking-tight black dark:text-white px-2">{{ price }} so'm dan {{ capacity }}{{ capacityMeasure }}</h4>
+      <p class=" font-normal text-gray-700 dark:text-gray-400 px-2">{{ description }}</p>
       </div>
-      <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1 text-center mt-1 mb-3">Ko'proq ma'lumot</button>
+      <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1 text-center mx-2 mt-2 mb-3">Ko'proq ma'lumot</button>
 
     </div>
   </div>
 </template>
 <style scoped>
-.line {
-  width: 100%;
-  height: 1px;
-  background: gray;
-}
-.sss{
-  margin-top:40px;
-  margin-right: 0px;
-  justify-content: end;
-}
-.gapp {
-  gap: 95px;
-}
 </style>

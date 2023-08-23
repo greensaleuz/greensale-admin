@@ -16,15 +16,18 @@ export default defineComponent({
   },
   methods: {
     async getDataAsync() {
-      var response = await axios.get<SellerAnnouncementViewModel[]>(
+      var response = await axios.get(
         '/api/common/seller/post?page=1'
-        )
+        ).then( response =>  {
+            const headers = response.headers;
+            debugger;
+            if (headers.has('x-pagination')) {
+              console.log(response.headers.has('x-pagination'));
+            }          
+          }
+        );
         axios.defaults.withCredentials = true;
-
-      console.log(response.headers['x-Ppagination'])
-
-      this.postsList = response.data
-      console.log(this.postsList)
+      // this.postsList = response.data
     }
   },
   setup() {},

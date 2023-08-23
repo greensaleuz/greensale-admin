@@ -1,43 +1,51 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import axios from "@/plugins/axios"
-import { Logindto } from '@/dtos/AuthDtos'
+import axios from '@/plugins/axios'
+import { LoginDto } from '@/dtos/AuthDtos'
+import { disconnect } from 'process'
+
 export default defineComponent({
-  data(){
-    return{
-      phone: "" as String,
-      pasword: "" as String
+  data() {
+    return {
+      phone: '' as String,
+      password: '' as String,
+      existsError: false as boolean
     }
   },
-  methods:{
-    async loginAsync(){
-       var loginDto = new Logindto();
-       logindto.phoneNumber=this.phone;
-       loginDto.password=this.password;
-      
-       var jsonContent:string=JSON.stringify(loginDto);
-       var response=await axios.post("/api/auth/login",jsonContent,{
-        headers:{
-          'Content-Type':'application/json'
+  methods: {
+    async loginAsync() {
+      var loginDto = new LoginDto()
+      loginDto.phoneNumber = this.phone
+      loginDto.password = this.password
+
+      var jsonContent: string = JSON.stringify(loginDto)
+      var response = await axios.post('/api/auth/login', jsonContent, {
+        headers: {
+          'Content-Type': 'application/json'
         }
-       });
-       var token:string=response.data.token;
-       document.cookie="access_token="+token+"; expires: Session;path=/" ;
+      })
+
+      if (response.status == 200) {
+        var token: string = response.data.token
+        document.cookie = 'access_token=' + token + '; expires: SESSION; path=/'
+        this.$router.push('/dashboard')
+      } else {
+        this.existsError = true
+      }
+    },
+    dismissErrors() {
+      this.existsError = false
     }
   },
-  setup() {
-    
-  },
+  setup() {}
 })
 </script>
 
-
-
 <template>
-  <section class="bg-gray-50 dark:bg-gray-900 for-width">
+  <section class="bg-gray-50 height_ dark:bg-gray-800 for-width pt-5 pb-2">
     <div
-      class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 for-form-width"
-      style="width: 400px"
+      class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0 for-form-width"
+      style="width: 430px"
     >
       <a
         href="#"
@@ -55,8 +63,7 @@ export default defineComponent({
           ></h1>
           <div class="space-y-4 md:space-y-6" action="#">
             <div>
-              <label
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >Telefon raqam</label
               >
               <input
@@ -67,8 +74,7 @@ export default defineComponent({
               />
             </div>
             <div>
-              <label
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >Parol</label
               >
               <input
@@ -96,13 +102,13 @@ export default defineComponent({
               </div>
               <a
                 href="#"
-                class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
+                class="text-sm font-medium text-primary-600 hover:underline dark:text-gray-400 text-white"
                 >Parolni unutdingizmi?</a
               >
             </div>
             <button
               @click="loginAsync"
-              class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 p-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             >
               Kirish
             </button>
@@ -110,12 +116,46 @@ export default defineComponent({
         </div>
       </div>
     </div>
+
+    <!-- begin :: alert-->
+
+    <div
+      v-show="existsError"
+      class="flex items-center mx-auto mt-5 w-96 p-4 mb-12 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-red-800 dark:text-red-400 dark:border-red-800"
+      role="alert"
+    >
+      <span> Phone number or Password are incorrect!</span>
+      <button
+        @click="dismissErrors"
+        type="button"
+        class="ml-auto -mx-1.5 -my-1.5 bg-red-50 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-gray-700"
+        data-dismiss-target="#alert-border-1"
+        aria-label="Close"
+      >
+        <span class="sr-only">Dismiss</span>
+        <svg
+          class="w-3 h-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- begin :: end-->
   </section>
 </template>
 
 <script lang="ts">
-
-
 </script>
 
 
@@ -124,7 +164,9 @@ export default defineComponent({
 .for-width .section {
   width: 100%;
 }
-
+.height_ {
+  height: 100%;
+}
 .for-form-width .div {
   width: 400px;
 }

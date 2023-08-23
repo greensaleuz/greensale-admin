@@ -16,7 +16,7 @@ export default defineComponent({
   },
   methods:{
     async getDataAsync(){
-        var response = await axios.get<StorageAnnouncementViewModel[]>("/api/common/seller/post?page=1"); 
+        var response = await axios.get<StorageAnnouncementViewModel[]>("/api/common/storage?page=1"); 
         this.postsList = response.data;
         console.log(this.postsList);
     }
@@ -35,13 +35,14 @@ export default defineComponent({
     <div class="cart_wrapper">
      <template v-for="element in postsList">
        
-      <StorageAnnouncementViewComponent
+      <StorageAnnouncementViewComponent 
         :id=element.id
         :fullName=element.fullName
         :userPhoneNumber=element.userPhoneNumber
         :postPhoneNumber = element.postPhoneNumber
         :categoryName=element.categoryName
         :title=element.title
+        :info=element.info
         :description=element.description
         :price=element.price
         :capacity=element.capacity
@@ -53,7 +54,7 @@ export default defineComponent({
         :status=element.status
         :createdAt=element.createdAt
         :updatedAt=element.updatedAt
-        :buyerPostsImages=element.buyerPostsImages
+        :imagePath=element.imagePath
       ></StorageAnnouncementViewComponent>
     
     </template>  

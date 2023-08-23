@@ -5,6 +5,7 @@ export class StorageViewModel{
     postPhoneNumber: String = "";
     categoryName: String = "";
     title: String = "";
+    info:String="";
     description: String = "";
     price: Number = 0;
     capacity: Number = 0;
@@ -16,5 +17,5 @@ export class StorageViewModel{
     status: Number = 0;
     createdAt: Date=new Date();
     updatedAt: Date=new Date();
-    storagePostsImages: String[] = [];
+    imagePath: String="";
 }

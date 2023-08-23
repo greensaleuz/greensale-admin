@@ -17,5 +17,9 @@
     "uz":"O'zbekcha",
 
     "edit":"Tahrirlash",
-    "delete":"O'chirish"
+    "delete":"O'chirish",
+    "create":"Qo'shish",
+
+    "enter_a_category_name":"Toifa nomini kiriting",
+    "add_a_category":"Toifani qo'shish"
     }
