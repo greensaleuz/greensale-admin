@@ -3,7 +3,7 @@ import { getCookie } from '@/helpers/CookieHelper';
 const instance = axios.create({
   baseURL: "http://95.130.227.68:8080",//process.env.VUE_APP_BASE_URL // Set your base URL here
   headers: {
-    Authorization: `Baerer ${getCookie("access_token")}`
+    Authorization: `Bearer ${getCookie("access_token")}`
   }
 });
 // Interceptors for handling common scenarios
