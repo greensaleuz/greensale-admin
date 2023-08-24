@@ -7,6 +7,7 @@ const router = createRouter({
       path: '/',
       name: 'main',
       component: () => import ("../layouts/Layout.vue"),
+      redirect:"/auth/login",
       children:[
         {
           path:'dashboard',
@@ -25,20 +26,28 @@ const router = createRouter({
           component:()=>import ("../views/announcements/BuyerAnnouncementView.vue")
         },
         {
+          path:'buyerinformation',
+          component:()=>import ("../views/InformationAnnouncement/BuyerInfoView.vue")
+        },
+        {
           path:'sellerannouncements',
           component:()=> import ("../views/announcements/SellerAnnouncementView.vue")
+        },
+        {
+          path:'sellerannouncement/sellerinformation',
+          component:()=> import ("../views/InformationAnnouncement/SellerInfoView.vue")
         },
         {
           path:'storagsannouncements',
           component:()=> import ("../views/announcements/StoragesAnnouncement.vue")
         },
         {
-          path:'categories',
-          component: () => import ("../views/categories/CategoryView.vue")
+          path:'storagsannouncements/storageinformation',
+          component:()=> import ("../views/InformationAnnouncement/StorageInfoView.vue")
         },
         {
-          path:'informations',
-          component: () => import ("../views/informations/InformationView.vue")
+          path:'categories',
+          component: () => import ("../views/categories/CategoryView.vue")
         }
       ]
     },

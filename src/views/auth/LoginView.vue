@@ -42,20 +42,18 @@ export default defineComponent({
 </script>
 
 <template>
-  <section class="bg-gray-50 height_ dark:bg-gray-800 for-width pt-5 pb-2">
+  <section class="bg-white height_ dark:bg-gray-800 for-width pt-5 pb-2">
     <div
       class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0 for-form-width"
-      style="width: 430px"
+      style="width: 430px;"
     >
-      <a
-        href="#"
-        class="flex items-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white"
-      >
-        <img class="w-8 h-8 mr-2" src="../../assets/logo.svg" alt="logo" />
-        Green Sale
-      </a>
+    <a class="flex mx-20 md:mr-24 my-3 m">
+          <img src="../../assets/logo/SVG/Artboard.svg" class="h-12 mr-3 " alt="" />
+          <p class=" text-xl pt-2   font-bold sm:text-2xl whitespace-nowrap dark:text-white">Green Sale</p>
+        </a>
       <div
         class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 w-400"
+        style=" box-shadow: 0px 5px 10px gray;"
       >
         <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
           <h1

@@ -38,17 +38,20 @@ export default defineComponent({
     }
   },
   methods: {
-    load() {
+    async load() {
       debugger;
       this.baseURL = axios.defaults.baseURL!;
       this.imageFullPath = this.baseURL + '//' + this.imagePath;
       console.log(this.imageFullPath);
       this.createdAtString = formatDate(this.createdAt!)
       this.updatedAtString = formatDate(this.updatedAt!)
+    },
+    exit(){
+      this.$router.push('storagsannouncements/storageinformation')
     }
   },
-  mounted() {
-    this.load()
+  async mounted() {
+    await this.load()
   }
 })
 </script>
@@ -84,9 +87,12 @@ export default defineComponent({
         <div>
       <h4 class=" text-2xl tracking-tight text-black dark:text-white px-2">{{ title }}</h4>
       <h4 class=" text-xl tracking-tight black dark:text-white px-2">{{ info}}</h4>
-      <p class=" font-normal text-gray-700 dark:text-gray-400 px-2">{{ description }}</p>
+      <p class=" font-normal text-gray-700 dark:text-gray-400 px-2"    style="width: 290px; ">{{ description }}</p>
       </div>
-      <button type="button" class="text-white bg-gradient-to-r  from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1 mx-2 text-center mt-2 mb-3">Ko'proq ma'lumot</button>
+      <button 
+      type="button" 
+      @click="exit"
+      class="text-white bg-gradient-to-r  from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1 mx-2 text-center mt-2 mb-3">{{ $t('koproq_malumot') }}</button>
 
     </div>
   </div>

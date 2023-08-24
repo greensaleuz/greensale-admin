@@ -43,6 +43,9 @@ export default defineComponent({
       this.imageFullPath = this.baseURL + '/' + this.imagePath
       this.createdAtString = formatDate(this.createdAt!)
       this.updatedAtString = formatDate(this.updatedAt!)
+    },
+    exit(){
+      this.$router.push('sellerannouncement/sellerinformation')
     }
   },
   mounted() {
@@ -50,8 +53,6 @@ export default defineComponent({
   }
 })
 </script>
-
-
 
 <template>
     <div
@@ -83,7 +84,9 @@ export default defineComponent({
       <h4 class=" text-xl tracking-tight black dark:text-white px-2">{{ price }} so'm dan {{ capacity }}{{ capacityMeasure }}</h4>
       <p class=" font-normal text-gray-700 dark:text-gray-400 px-2">{{ description }}</p>
       </div>
-      <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm  py-1  text-center px-2 mx-2  mt-1 mb-3">Ko'proq ma'lumot</button>
+      <button 
+      @click="exit"
+      type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm  py-1  text-center px-2 mx-2  mt-1 mb-3">{{ $t('koproq_malumot') }}}</button>
 
     </div>
   </div>

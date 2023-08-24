@@ -44,6 +44,9 @@ export default defineComponent({
       console.log(this.imageFullPath)
       this.createdAtString = formatDate(this.createdAt!)
       this.updatedAtString = formatDate(this.updatedAt!)
+    },
+    exit(){
+      this.$router.push('buyerinformation')
     }
   },
   mounted() {
@@ -59,7 +62,7 @@ export default defineComponent({
     <a href="#">
       <img
         class="rounded-t-lg"
-        v-bind:src="imageFullPath"
+        :src="imageFullPath"
         style="width: 290px; height: 200px"
       />
     </a>
@@ -83,10 +86,25 @@ export default defineComponent({
       <h4 class=" text-xl tracking-tight black dark:text-white px-2">{{ price }} so'm dan {{ capacity }}{{ capacityMeasure }}</h4>
       <p class=" font-normal text-gray-700 dark:text-gray-400 px-2">{{ description }}</p>
       </div>
-      <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1 text-center mx-2 mt-2 mb-3">Ko'proq ma'lumot</button>
+      <button 
+      @click="exit"
+      type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1 text-center mx-2 mt-2 mb-3">{{ $t('koproq_malumot') }}</button>
 
     </div>
   </div>
 </template>
 <style scoped>
+.line {
+  width: 100%;
+  height: 1px;
+  background: gray;
+}
+.sss{
+  margin-top:40px;
+  margin-right: 0px;
+  justify-content: end;
+}
+.gapp {
+  gap: 95px;
+}
 </style>

@@ -1,4 +1,4 @@
-<script setup Lang="ts">
+<script setup lang="ts">
 import Flowbitesetup from '@/FlowbiteSetup.vue'
 
 
