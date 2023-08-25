@@ -35,17 +35,18 @@ export default defineComponent({
     status: Number,
     createdAt: Date,
     updatedAt: Date,
-    imagePath: String
+    mainImage: String
   },
   methods: {
     load() {
       this.baseURL = axios.defaults.baseURL!
-      this.imageFullPath = this.baseURL + '/' + this.imagePath
+      this.imageFullPath = this.baseURL + '/' + this.mainImage
       this.createdAtString = formatDate(this.createdAt!)
       this.updatedAtString = formatDate(this.updatedAt!)
     },
     exit(){
       this.$router.push('sellerinformation')
+      localStorage.setItem("sellerById",this.id);
     }
   },
   mounted() {
@@ -56,12 +57,13 @@ export default defineComponent({
 
 <template>
     <div
-    class="max-w-sm  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700"
+    class="m-1   bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700"
   >
     <a href="#">
       <img
         class="rounded-t-lg w-full"
-        src="@/images/imagesfruit.jpg"
+        v-bind:src="imageFullPath"
+        style="width: 290px; height: 200px"
       />
     </a>
 
@@ -85,7 +87,7 @@ export default defineComponent({
       </div>
       <button 
       @click="exit"
-      type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm  py-1  text-center px-2 mx-2  mt-1 mb-3">{{ $t('koproq_malumot') }}}</button>
+      type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm  py-1  text-center px-2 mx-2  mt-1 mb-3">{{ $t('koproq_malumot') }}</button>
 
     </div>
   </div>

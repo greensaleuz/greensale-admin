@@ -47,7 +47,10 @@ export default defineComponent({
       this.updatedAtString = formatDate(this.updatedAt!)
     },
     exit(){
+      debugger;
+      localStorage.setItem("sellerById",this.id);
       this.$router.push('storageinformation')
+
     }
   },
   async mounted() {
@@ -58,8 +61,7 @@ export default defineComponent({
 
 <template>
     <div
-    class="flex-none pb-2 max-w-sm bg-gray-50 border my-1 border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 mx-1"
-  >
+    class="flex-none pb-2 max-w-sm bg-gray-50 border my-1 border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700 mx-1">
     <a href="#">
       <img
         class="rounded-t-lg w-full"
@@ -90,7 +92,7 @@ export default defineComponent({
       type="button" 
       @click="exit"
       class="text-white bg-gradient-to-r  from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1 mx-2 text-center mt-2 mb-3">{{ $t('koproq_malumot') }}</button>
-    </div>
+    
   </div>
 </template>
 <style scoped>

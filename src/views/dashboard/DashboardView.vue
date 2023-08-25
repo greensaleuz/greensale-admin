@@ -40,7 +40,7 @@ export default defineComponent({
         type: 'area',        
         data: [0, 39, 54, 61, 12, 54, 32, 52, 44, 32, 31]
       }, {
-        name: 'B qiymat',
+        name: 'Buyer',
         type: 'line',
         data: [55, 69, 45, 61, 43, 54, 37, 52, 44, 61, 43]
       }],
@@ -63,13 +63,13 @@ export default defineComponent({
         yaxis: [
           {
             title: {
-              text: 'Qiymat 1',
+              text: 'Seller value',
             },
           },
           {
             opposite: true,
             title: {
-              text: 'Qiymat 2',
+              text: 'Buyer value',
             },
           },
         ],

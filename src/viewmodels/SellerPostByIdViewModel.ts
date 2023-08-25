@@ -17,8 +17,8 @@ class SellerPostByIdViewModel {
     type: string = "";
     region: string = "";
     district: string = "";
-    updatedAt: Date=new Date();
-    createdAt: Date=new Date();
+    createdAt: Date = new Date();
+    updatedAt: Date = new Date();
     status: number = 0;
     postImages: any[]=[];
 }

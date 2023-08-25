@@ -6,10 +6,15 @@ import { SellersPostByIdViewModel } from '@/viewmodels/SellerPostByIdViewModel'
 import SellerInfoComponenta from '@/views/InformationAnnouncement/SellerInfoView.vue'
 import axios from '@/plugins/axios'
 import InformationView from '../informations/InformationView.vue'
+import { threadId } from 'worker_threads'
 
 export default defineComponent({
   components: {
     InformationView
+  }, 
+   props: {
+    createdAt: Date,
+    updatedAt: Date,
   },
   data() {
     return {
@@ -36,16 +41,14 @@ export default defineComponent({
       postImages:[],
       createdAtString: '' as String,
       updatedAtString: '' as String,
-      test: false as boolean
+      test: false as boolean,
+      Idd : 26
     }
   }, 
-  props: {
-    createdAt: Date,
-    updatedAt: Date
-  },
   methods: {
     async getDataAsync() { 
-      var response = await axios.get<SellersPostByIdViewModel[]>('/api/common/seller/post/'+26)
+      this.Idd = localStorage.getItem('sellerById')
+      var response = await axios.get<SellersPostByIdViewModel[]>('/api/common/seller/post/'+this.Idd)
       this.postList = response.data
       console.log(this.postList)
       this.createdAtString = formatDate(this.createdAt!)
@@ -77,8 +80,8 @@ export default defineComponent({
 <label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('capasitymeasure') }}: {{  postList.capacityMeasure }}</label>
 <label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('region') }}: {{  postList.region }}</label>
 <label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('district') }}: {{  postList.district }}</label>
-<label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('createdAt') }}: {{  postList.createdAtString }}</label>
-<label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('updated') }}: {{  postList.updatedAtString }}</label>
+<label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('createdAt') }}: {{  createdAtString }}</label>
+<label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('updated') }}: {{  updatedAt }}</label>
 <label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('status') }}: {{  postList.status }}</label>
 <label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('description') }}: {{  postList.description }}</label>
 
@@ -96,11 +99,7 @@ export default defineComponent({
     <div class="relative h-56 overflow-hidden bg-white rounded-lg md:h-96">
       <!-- Item 1 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img
-          v-bind:src="postImage.ImagePath"
-          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-          alt="..."
-        />
+      
       <!-- Item 5 -->
       
       </div>
