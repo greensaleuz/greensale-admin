@@ -61,7 +61,7 @@ export default defineComponent({
     <a href="#">
       <img
         class="rounded-t-lg w-full"
-        src="@/images/images (8).jpg"
+        src="@/images/imagesfruit.jpg"
       />
     </a>
 

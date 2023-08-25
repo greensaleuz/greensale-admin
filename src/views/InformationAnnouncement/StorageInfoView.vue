@@ -90,7 +90,7 @@ export default defineComponent({
       <!-- Item 1 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
         <img
-          src="/docs/images/carousel/carousel-1.svg"
+          
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
           alt="..."
         />
@@ -98,7 +98,7 @@ export default defineComponent({
       <!-- Item 2 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
         <img
-          src="/docs/images/carousel/carousel-2.svg"
+          
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
           alt="..."
         />
@@ -106,7 +106,7 @@ export default defineComponent({
       <!-- Item 3 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
         <img
-          src="/docs/images/carousel/carousel-3.svg"
+          
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
           alt="..."
         />
@@ -114,7 +114,7 @@ export default defineComponent({
       <!-- Item 4 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
         <img
-          src="/docs/images/carousel/carousel-4.svg"
+          
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
           alt="..."
         />
@@ -122,7 +122,7 @@ export default defineComponent({
       <!-- Item 5 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
         <img
-          src="/docs/images/carousel/carousel-5.svg"
+          
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
           alt="..."
         />
