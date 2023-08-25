@@ -45,7 +45,7 @@ export default defineComponent({
       this.updatedAtString = formatDate(this.updatedAt!)
     },
     exit(){
-      this.$router.push('sellerannouncement/sellerinformation')
+      this.$router.push('sellerinformation')
     }
   },
   mounted() {
@@ -77,7 +77,6 @@ export default defineComponent({
           </h5>
         </div>
       </div>
-      
       <div class="line "></div>
         <div>
       <h4 class=" text-3xl tracking-tight text-black dark:text-white px-2">{{ title }}</h4>

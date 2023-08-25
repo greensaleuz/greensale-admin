@@ -70,11 +70,11 @@ export default defineComponent({
     <div class="">
       <div class="flex">
         <IconLocation class="pt-1"></IconLocation>
-        <div class="flex pt-1 gapp">
+        <div class="flex pt-1">
           <h5 class="mb-2 text-sm  tracking-tight text-gray-600 dark:text-gray-200">
             {{ district }}
           </h5>
-          <h5 class="mb-2 pt-1 text-xs  tracking-tight text-gray-600 dark:text-gray-200">
+          <h5 class="mb-2 pt-1 text-xs mx-3 tracking-tight text-gray-600 dark:text-gray-200" style="margin-left:auto;">
             {{ updatedAtString }}
           </h5>
         </div>

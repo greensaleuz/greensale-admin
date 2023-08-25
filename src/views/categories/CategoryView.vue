@@ -8,7 +8,8 @@ import axios from '@/plugins/axios'
 
 export default defineComponent({
   components: {
-    CategoryViewComponent, CategoryCreateComponent
+    CategoryViewComponent,
+    CategoryCreateComponent
   },
   data() {
     return {
@@ -33,15 +34,14 @@ export default defineComponent({
 
 <template>
   <CategoryCreateComponent></CategoryCreateComponent>
- 
 
   <ul>
     <template v-for="element in categoriesList">
       <CategoryViewComponent
-        :id=element.id
-        :name=element.name
-        :createdAt=element.createdAt
-        :updatedAt=element.updatedAt
+        :id="element.id"
+        :name="element.name"
+        :createdAt="element.createdAt"
+        :updatedAt="element.updatedAt"
       ></CategoryViewComponent>
     </template>
   </ul>

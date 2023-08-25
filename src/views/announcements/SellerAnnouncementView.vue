@@ -1,68 +1,65 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { SellerAnnouncementViewModel } from '@/viewmodels/SellerAnnouncementVieWModel'
-import SellerAnnouncementViewComponent from '@/components/annoncements/sellerannouncements/SellerAnnouncementViewComponent.vue'
-
-import axios from '@/plugins/axios'
+import { defineComponent } from 'vue';
+import  { SellerAnnouncementViewModel }  from '@/viewmodels/SellerAnnouncementViewModel';
+import SellerAnnouncementViewComponent from '@/components/annoncements/sellerannouncements/SellerAnnouncementViewComponent.vue';
+import InformationView from '../informations/InformationView.vue'
+import axios from '@/plugins/axios';
 
 export default defineComponent({
-  components: {
-    SellerAnnouncementViewComponent
+  components:{
+    SellerAnnouncementViewComponent, InformationView
   },
   data() {
     return {
-      postsList: [] as SellerAnnouncementViewModel[]
+      postsList : [] as SellerAnnouncementViewModel[]
     }
   },
-  methods: {
-    async getDataAsync() {
-      var response = await axios.get(
-        '/api/common/seller/post?page=1'
-        ).then( response =>  {
-            const headers = response.headers;
-            debugger;
-            if (headers.has('x-pagination')) {
-              console.log(response.headers.has('x-pagination'));
-            }          
-          }
-        );
-        axios.defaults.withCredentials = true;
-      // this.postsList = response.data
+  methods:{
+    async getDataAsync(){
+        var response = await axios.get<SellerAnnouncementViewModel[]>("/api/common/seller/post?page=1"); 
+        this.postsList = response.data;
+        console.log(this.postsList);
     }
   },
-  setup() {},
+  setup(){
+ 
+  },
   async mounted() {
-    await this.getDataAsync()
-  }
-})
+      await this.getDataAsync();
+  },
+});
 </script>
 
 <template>
-  <ul>
+  <InformationView ></InformationView>
+  <ul> 
     <div class="cart_wrapper">
-      <template v-for="element in postsList">
-        <SellerAnnouncementViewComponent
-          :id="element.id"
-          :fullName="element.fullName"
-          :userPhoneNumber="element.userPhoneNumber"
-          :postPhoneNumber="element.postPhoneNumber"
-          :categoryName="element.categoryName"
-          :title="element.title"
-          :description="element.description"
-          :price="element.price"
-          :capacity="element.capacity"
-          :capacityMeasure="element.capacityMeasure"
-          :type="element.type"
-          :region="element.region"
-          :district="element.district"
-          :address="element.address"
-          :status="element.status"
-          :createdAt="element.createdAt"
-          :updatedAt="element.updatedAt"
-          :buyerPostsImages="element.buyerPostsImages"
-        ></SellerAnnouncementViewComponent>
-      </template>
-    </div>
+     <template v-for="element in postsList">
+       
+      <SellerAnnouncementViewComponent 
+        :id=element.id
+        :fullName=element.fullName
+        :userPhoneNumber=element.userPhoneNumber
+        :postPhoneNumber = element.postPhoneNumber
+        :categoryName=element.categoryName
+        :title=element.title
+        :info=element.info
+        :description=element.description
+        :price=element.price
+        :capacity=element.capacity
+        :capacityMeasure=element.capacityMeasure
+        :type=element.type
+        :region=element.region
+        :district=element.district
+        :address=element.address
+        :status=element.status
+        :createdAt=element.createdAt
+        :updatedAt=element.updatedAt
+        :mainImage=element.mainImage
+      ></SellerAnnouncementViewComponent>
+    
+    </template>  
+    </div> 
   </ul>
 
   <nav aria-label="Page navigation example mx-80">
@@ -81,20 +78,19 @@ export default defineComponent({
           >1</a
         >
       </li>
-   
-      <li>
+     <li>
         <a
           href="#"
           class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-          >Next</a
-        >
+          >Next</a>
       </li>
     </ul>
   </nav>
 </template>
 <style scoped>
-.cart_wrapper {
-  display: flex;
-  flex-wrap: wrap;
+.cart_wrapper{
+    display: flex;
+    flex-wrap: wrap;
 }
+
 </style>

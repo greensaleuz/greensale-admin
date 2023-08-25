@@ -23,5 +23,44 @@
     "enter_a_category_name":"Toifa nomini kiriting",
     "add_a_category":"Toifani qo'shish",
 
-    "koproq_malumot":"Ko'proq ma'lumot"  
+    "koproq_malumot":"Ko'proq ma'lumot"  ,
+    "categorydleteaccess":"Haqiqatan ham bu toifani oʻchirib tashlamoqchimisiz?",
+
+    "censel":"Chiqish",
+    "yes":"Ha",
+
+    "newCategoryName":"Toifa nomi",
+    "update":"Yangilash",
+
+    "fullname":"Ism familiya",
+    "phonenumber":"Telefon raqamlar",
+    "price":"Narx",
+    "description":"Izoh",
+    "title":"Sarlavha",
+    "capacity":"Miqor",
+    "capasitymeasure":"O'lchovi",
+    "region":"Viloyat",
+    "district":"Tuman",
+    "type":"Turi",
+    "createdAt":"Qo'shilgan vaqti",
+    "updated":"Yamgilangan vaqti",
+    "status":"Holati",
+
+    "sellerpostinformation":"Sotuvchi e'loni ma'lumotlari",
+    "buyerpostinformation":"Xarid qiluvchi E'loni ma'lumotlari",
+
+    "announcemment":"Barcha e'lonlar",
+    "xaridqiluvchilareloni":"Xarid qiluvchilar e'loni",
+    "newannouncements":"Yangi e'lonlar",
+    "kelishilganlar":"Kelishilganlar",
+
+    "firsName":"Ism",
+    "phone":"Telefon raqam",
+    "adress":"Manzil",
+    "lastname":"Familiya",
+
+    "a":"Bir yillik e'lonlar soni",
+    "b":"Bir yillik olingan e'lonlar soni",
+    "c":"Band qilinmagan e'lonlar soni",
+    "d":"Foydalanuvchilar soni"
     }

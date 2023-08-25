@@ -34,7 +34,7 @@ export default defineComponent({
       baseURL: '' as String,
       createdAtString: '' as String,
       updatedAtString: '' as String,
-      imageFullPath: '' as String
+      imageFullPath: '' as String,
     }
   },
   methods: {
@@ -47,7 +47,7 @@ export default defineComponent({
       this.updatedAtString = formatDate(this.updatedAt!)
     },
     exit(){
-      this.$router.push('storagsannouncements/storageinformation')
+      this.$router.push('storageinformation')
     }
   },
   async mounted() {
@@ -55,8 +55,6 @@ export default defineComponent({
   }
 })
 </script>
-
-
 
 <template>
     <div
@@ -73,16 +71,15 @@ export default defineComponent({
     <div class="">
       <div class="flex">
         <IconLocation class="pt-1"></IconLocation>
-        <div class="flex pt-1 gapp">
+        <div class="flex pt-1 w-full">
           <h5 class="mb-2 text-sm  tracking-tight text-gray-600 dark:text-gray-200">
             {{ district }}
           </h5>
-          <h5 class="mb-2 pt-1 text-xs  tracking-tight text-gray-600 dark:text-gray-200">
+          <h5 class="mb-2 pt-1 text-xs mx-3  tracking-tight text-gray-600 dark:text-gray-200" style="margin-left: auto;">
             {{ updatedAtString }}
           </h5>
         </div>
       </div>
-      
       <div class="line"></div>
         <div>
       <h4 class=" text-2xl tracking-tight text-black dark:text-white px-2">{{ title }}</h4>
@@ -93,7 +90,6 @@ export default defineComponent({
       type="button" 
       @click="exit"
       class="text-white bg-gradient-to-r  from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1 mx-2 text-center mt-2 mb-3">{{ $t('koproq_malumot') }}</button>
-
     </div>
   </div>
 </template>

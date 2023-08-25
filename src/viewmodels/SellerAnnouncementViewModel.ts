@@ -16,5 +16,5 @@ export class SellerAnnouncementViewModel{
     status: Number = 0;
     createdAt: Date=new Date();
     updatedAt: Date=new Date();
-    sellerPostsImages: String = "";
+    mainImage: String = "";
 }

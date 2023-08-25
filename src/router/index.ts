@@ -34,7 +34,7 @@ const router = createRouter({
           component:()=> import ("../views/announcements/SellerAnnouncementView.vue")
         },
         {
-          path:'sellerannouncement/sellerinformation',
+          path:'sellerinformation',
           component:()=> import ("../views/InformationAnnouncement/SellerInfoView.vue")
         },
         {
@@ -42,7 +42,7 @@ const router = createRouter({
           component:()=> import ("../views/announcements/StoragesAnnouncement.vue")
         },
         {
-          path:'storagsannouncements/storageinformation',
+          path:'storageinformation',
           component:()=> import ("../views/InformationAnnouncement/StorageInfoView.vue")
         },
         {
