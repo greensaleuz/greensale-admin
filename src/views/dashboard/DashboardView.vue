@@ -102,7 +102,7 @@ export default defineComponent({
 
   <ul>
     <DashboardViewComponent :apiData="apiBuyerCount" :countUser="apiUserCount" :countSeller="apiSellerCount"
-      :countAgreed="apiStorageCount" :summaAnnouncemet="summa" />
+      :countAgreed="apiStorageCount" :summaAnnouncemet="summa" :countBuyer="apiBuyerCount"/>
   </ul>
   <!--begin:: Dashboard-->
 </template>

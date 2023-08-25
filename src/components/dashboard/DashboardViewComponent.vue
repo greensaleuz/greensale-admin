@@ -17,6 +17,7 @@ export default defineComponent({
     countUser: Number,
     countSeller: Number,
     countAgreed: Number,
+    countBuyer: Number,
     summaAnnouncemet: Number
   },
   methods: {
@@ -57,7 +58,7 @@ export default defineComponent({
         </a>
       </div>
       <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
-        {{ $t('b')}}: {{ summaAnnouncemet }}
+        {{ $t('b')}}: {{ countBuyer  }}
       </p>
       <div class="my-5 w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
         <div class="bg-gray-600 h-2.5 rounded-full dark:bg-gray-300" style="width: 45%"></div>
