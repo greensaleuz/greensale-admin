@@ -15,6 +15,7 @@ export default defineComponent({
     async getDataAsync(){
       this.isLoaded = false;
       const token = getToken();
+      debugger;
       var response = await axios.get<UserViewModel[]>("/api/admin/users?page=1", {
          headers:{
           "Authorization": "Bearer "+token
@@ -52,21 +53,45 @@ export default defineComponent({
   <!--end:: Users Skeletons-->
 
    <!--begin:: User-->
+    
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                     firsName 
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      lastName
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Phone
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      address
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                     More information
+                    </th>
+                </tr>
+            </thead>
+         </table>
+    </div>
    <div class="flex w-100 justify-end">
    </div>
    <ul v-show="isLoaded==true">
      <template v-for="element in usersList">
        <UserViewComponent
          :id=element.id
-         :firstName=element.firs_name
-         :lastName=element.last_name
-         :phoneNumber=element.phone_number
-         :phoneNumberConfirme=element.phone_number_confirm
+         :firstName=element.firstName
+         :lastName=element.lastName
+         :phoneNumber=element.phoneNumber
+         :phoneNumberConfirme=element.phoneNuberConfirme
          :region=element.region
          :district=element.district
          :address=element.address
-         :createdAt=element.created_at
-         :updatedAt=element.updated_at
+         :createdAt=element.createdAt
+         :updatedAt=element.updatedAt
          class="mt-2 mb-3">
        </UserViewComponent>
      </template>

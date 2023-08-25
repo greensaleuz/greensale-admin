@@ -156,7 +156,7 @@ window.addEventListener('load', function () {
         </a>
       </div>
       <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
-        Bir yillik kelishilgan e'lonlar soni: {{ summaAnnouncemet }}
+        Bir yillik kelishilgan e'lonlar soni: {{ countSeller }}
       </p>
       <div class="mb-1 text-base font-medium dark:text-white">Dark</div>
       <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">

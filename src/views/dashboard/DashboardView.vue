@@ -10,15 +10,16 @@ export default defineComponent({
   methods: {
     async getDataAsync() {
       try {
+        debugger;
         const resBuyerCount = await axios.get('api/common/buyer/posts/count')
         const resSellerCount = await axios.get('api/common/seller/post/count')
         const resStorageCount = await axios.get('api/common/storage/count')
-        const resUserCount = await axios.get('api/admin/users/count')
+        // const resUserCount = await axios.get('api/admin/users/count')
 
         this.apiBuyerCount = resBuyerCount.data
         this.apiSellerCount = resSellerCount.data
         this.apiStorageCount = resStorageCount.data
-        this.apiUserCount = resUserCount.data
+        // this.apiUserCount = resUserCount.data
         this.summa = this.apiBuyerCount + this.apiSellerCount + this.apiStorageCount;
 
       } catch (error) {
