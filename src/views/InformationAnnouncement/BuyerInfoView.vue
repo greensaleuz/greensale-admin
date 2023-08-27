@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Cookies from 'js-cookie'
-import { formatDate } from '@/helpers/DataHelper'
+import { formatDate } from '../../helpers/DateHelper'
 import { BuyersPostByIdViewModel } from '@/viewmodels/BuyerPostByIdViewModel'
 import axios from '@/plugins/axios'
 

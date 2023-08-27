@@ -4,6 +4,8 @@ import Cookies from 'js-cookie'
 import { SellersPostByIdViewModel } from '@/viewmodels/SellerPostByIdViewModel'
 import axios from '@/plugins/axios'
 
+import { formatDate } from '../../helpers/DateHelper'
+
 export default defineComponent({
   components: {
   },
