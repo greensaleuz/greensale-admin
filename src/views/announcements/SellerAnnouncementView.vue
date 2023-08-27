@@ -59,7 +59,7 @@ export default defineComponent({
       ></SellerAnnouncementViewComponent>
     
     </template>  
-    </div> 
+   </div>
   </ul>
 
   <nav aria-label="Page navigation example mx-80">

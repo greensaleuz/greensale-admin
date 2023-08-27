@@ -1,4 +1,9 @@
 <script lang="ts">
+import IconEdit from "../../components/icons/interface/iconEdit.vue"
+import IconDelete from "../../components/icons/interface/iconDelete.vue"
+import IconCalendar from "../../components/icons/interface/iconCalendar.vue";
+import IconCalendarEdit from "../../components/icons/interface/iconCalendarEdit.vue";
+import {formatDate} from "@/helpers/DateHelper";
 import axios from '@/plugins/axios'
 import { formatDate } from '@/helpers/DataHelper'
 import { defineComponent } from 'vue'
@@ -8,30 +13,32 @@ import editComponent from './CategoryEditComponenta.vue'
 export default defineComponent({
   components: {
     deleteComponent, editComponent
-  },
-  props: {
-    id: Number,
-    name: String,
-    createdAt: Date,
-    updatedAt: Date
-  },
-  data() {
+    },
+    props: {
+        id: Number,
+        name: String,
+        imagePath: String,
+        description: String,
+        createdAt: Date,
+        updatedAt: Date
+    },
+    data() {
     return {
       baseURL: '' as String,
       createdAtString: '' as String,
       updatedAtString: '' as String
-    }
-  },
-  methods: {
+      }
+    },
+    methods: {
     load() {
       this.baseURL = axios.defaults.baseURL!
       this.createdAtString = formatDate(this.createdAt!)
       this.updatedAtString = formatDate(this.updatedAt!)
+      },
     },
-  },
-  mounted() {
+    mounted() {
     this.load()
-  }
+    }
 })
 </script>
 
@@ -49,7 +56,7 @@ export default defineComponent({
       <p class="p-1 mb-2 text-sm tracking-tight text-gray-900 dark:text-white">
         {{ updatedAtString }}
       </p>
-    </div>
+        </div>
     <div class="flex-none pt-8 justify-center mb-1">
      <editComponent
      :nameProp=name
@@ -61,6 +68,6 @@ export default defineComponent({
       >
       </deleteComponent>
      
-    </div>
-  </div>
+        </div>
+      </div>
 </template>

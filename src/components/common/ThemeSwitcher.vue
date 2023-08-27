@@ -8,20 +8,23 @@ if (
   currentThemeIsDark = ref(true)
 } else {
   currentThemeIsDark = ref(false)
-}
+    } 
+    else {
+        currentThemeIsDark = ref(false);
+    }
 
-function changeTheme() {
+    function changeTheme() {
   currentThemeIsDark.value = !currentThemeIsDark.value
   if (currentThemeIsDark.value) {
-    // dark
+            // dark
     document.documentElement.classList.add('dark')
     localStorage.setItem('color-theme', 'dark')
   } else {
-    // light
+            // light
     document.documentElement.classList.remove('dark')
     localStorage.setItem('color-theme', 'light')
-  }
-}
+        }
+    }
 
 import { useI18n } from 'vue-i18n'
 

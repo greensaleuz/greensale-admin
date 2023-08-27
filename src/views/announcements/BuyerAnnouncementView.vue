@@ -53,7 +53,7 @@ export default defineComponent({
           :mainImage="element.mainImage"
         ></BuyerAnnouncementViewComponent>
       </template>
-    </div>
+   </div>
   </ul>
 
   <nav aria-label="Page navigation example mx-80">
