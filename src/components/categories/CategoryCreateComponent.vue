@@ -1,7 +1,6 @@
 <script lang="ts">
-import Cookies from 'js-cookie';
 import { defineComponent } from "vue";
-import axios from "@/plugins/axios";
+import axios from "../../plugins/axios";
 export default defineComponent({
     components: {
 
