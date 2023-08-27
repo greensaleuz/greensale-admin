@@ -23,7 +23,7 @@ const router = createRouter({
         },
         {
           path:'buyerannnouncements',
-          component:()=>import ("../views/announcements/BuyerAnnouncementView.vue")
+          component : () => import ("../views/announcements/BuyerAnnouncementView.vue")
         },
         {
           path:'buyerinformation',
