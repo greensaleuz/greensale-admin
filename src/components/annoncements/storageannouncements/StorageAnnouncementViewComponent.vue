@@ -2,7 +2,7 @@
 import axios from '@/plugins/axios'
 import IconLocation from '@/components/icons/IconLokation.vue'
 import { defineComponent } from 'vue'
-import { formatDate } from '@/helpers/DataHelper'
+import { formatDate } from '../../../helpers/DateHelper'
 
 export default defineComponent({
   components: {
