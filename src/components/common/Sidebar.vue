@@ -1,54 +1,75 @@
+<script setup lang="ts">
+  import IconCategory from '../icons/IconCategories.vue'
+  import IconUser from '../icons/IconUsers.vue'
+  import IconHome from '../icons/IconHome.vue'
+  import IconAdmin from '../icons/IconAdmin.vue'
+  import IconInfo from '../icons/IconInfo.vue'
+  import IconAnnouncement from '../icons/IconAnnouncement.vue'
 
-<script setup lang = "ts">
-   import IconDashboard from '../icons/IconDashboard.vue';   
-   import IconAdmin from '../icons/IconAdmin.vue'
-   import IconCategories from '../icons/IconCategories.vue'
-   import IconUsers from '../icons/IconUsers.vue'
-   import IconInfo from '../icons/IconInfo.vue'
-   import IconAnnouncement from '../icons/IconAnnouncement.vue'        
-   import IconSettings from '../icons/IconSettings.vue' 
-   import { useI18n } from 'vue-i18n';
-   const { t } = useI18n();      
-   //import { RouterLink } from 'vue-router';
+  import { onMounted } from 'vue'
+  import { initFlowbite } from 'flowbite'
+
+  import { useI18n } from 'vue-i18n';
+  const { t } = useI18n();
+
+  onMounted(() => {
+    initFlowbite()
+})
 </script>
 <template>
-
-<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
-   <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+  <aside
+    id="logo-sidebar"
+    class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+    aria-label="Sidebar"
+  >
+    <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
       <ul class="space-y-2 font-medium">
-         <li>
-            <RouterLink to="/dashboard">
-               <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <IconDashboard></IconDashboard>
-                  <span class="ml-3">{{ $t("dashboard") }}</span>
-               </div>
-            </RouterLink>
-         </li>
-         <li>
-            <RouterLink to="/admins">
-               <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <IconAdmin></IconAdmin>
-                  <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("admins") }}</span>
-               </div>
-            </RouterLink>
-         </li>
-         <li>
-            <RouterLink to="/users">
-               <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <IconUsers></IconUsers>
-                  <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("users") }}</span>
-               </div>
-            </RouterLink>
-         </li>
-         <li>
-            <RouterLink to="/categories">
-               <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <IconCategories></IconCategories>
-                  <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("categories") }}</span>
-               </div>
-            </RouterLink>
-         </li>
-         <li>
+        <li>
+          <RouterLink to="/dashboard">
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <IconHome></IconHome>
+              <span class="ml-3">{{ $t("dashboard")}}</span>
+            </a>
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/admins">
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+          >
+            <IconAdmin></IconAdmin>
+            <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("admins")}}</span>
+          </a>
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/users">
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+          >
+            <IconUser></IconUser>
+            <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("users")}}</span>
+          </a>
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/categories">
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+          >
+            <IconCategory></IconCategory>
+            <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("categories")}}</span>
+          </a>
+          </RouterLink>
+        </li>
+
+        <li>
           <button
             type="button"
             class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
@@ -75,7 +96,7 @@
           </button>
           <ul id="dropdown-example" class="hidden py-2 space-y-2">
             <li>
-              <RouterLink to="/sellerannnouncements">
+              <RouterLink to="sellerannouncements">
               <a
                 href="#"
                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
@@ -84,7 +105,7 @@
               </RouterLink>
             </li>
             <li>
-              <RouterLink to="/buyerannouncements">
+              <RouterLink to="buyerannnouncements">
               <a
                 href="#"
                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
@@ -93,38 +114,28 @@
               </RouterLink>
             </li>
             <li>
-              <RouterLink to="storageannouncements">
+              <RouterLink to="storagsannouncements">
               <a
                 href="#"
                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                >{{ $t("storageannouncements")}}</a
+                >{{ $t("storagsannouncements")}}</a
               >
               </RouterLink>
             </li>
           </ul>
         </li>
-         <li>
-            <RouterLink to="/info">  
-               <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <IconInfo></IconInfo>
-                  <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("informations") }}</span>
-               </div>
-            </RouterLink>
-         </li>
-         <li>  
-            <RouterLink to="/settings">
-               <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <IconSettings></IconSettings>
-                  <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("settings") }}</span>
-               </div>
-         </RouterLink>
-         </li>
+        <li>
+          <RouterLink to="informations">
+          <a
+            href="#"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+          >
+            <IconInfo></IconInfo>
+            <span class="flex-1 ml-3 whitespace-nowrap">{{  $t ("informations") }}</span>
+          </a>
+          </RouterLink>
+        </li>
       </ul>
-   </div>
-</aside>
-
+    </div>
+  </aside>
 </template>
-
-<style>
-
-</style>

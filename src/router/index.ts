@@ -1,58 +1,65 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'main',
-      component: () => import("../layouts/Layout.vue"),
-      children: [
+      component: () => import ("../layouts/Layout.vue"),
+      redirect:"/auth/login",
+      children:[
         {
-          path: "dashboard",
-          component: ()=> import("../views/dashboard/DashboardView.vue")
+          path:'dashboard',
+          component:()=> import ("../views/dashboard/DashboardView.vue")
         },
         {
-          path: 'categories',
-          component: () => import('../views/categories/CategoriesView.vue'),
+          path : 'admins',
+          component : () => import ("../views/admins/AdminView.vue")
         },
         {
-          path: "info",
-          component: ()=> import("../views/info/InfoView.vue")
+          path:'users',
+          component : () => import ("../views/users/UserView.vue")
         },
         {
-          path: 'settings',
-          component: () => import('../views/settings/SettingsView.vue'),
+          path:'buyerannnouncements',
+          component:()=>import ("../views/announcements/BuyerAnnouncementView.vue")
         },
         {
-          path: "users",
-          component: ()=> import("../views/users/UserView.vue")
+          path:'buyerinformation',
+          component:()=>import ("../views/InformationAnnouncement/BuyerInfoView.vue")
         },
         {
-          path:'buyerannouncements',
-          component : () => import ("../views/announcements/BuyerAnnouncementView.vue")
+          path:'sellerannouncements',
+          component:()=> import ("../views/announcements/SellerAnnouncementView.vue")
         },
         {
-          path:'sellerannnouncements',
-          component: () => import ("../views/announcements/SellerAnnouncementView.vue")
+          path:'sellerinformation',
+          component:()=> import ("../views/InformationAnnouncement/SellerInfoView.vue")
         },
         {
-          path:'storageannouncements',
+          path:'storagsannouncements',
           component:()=> import ("../views/announcements/StoragesAnnouncement.vue")
         },
         {
-          path: 'admins',
-          component: () => import('../views/admins/AdminsView.vue'),
+          path:'storageinformation',
+          component:()=> import ("../views/InformationAnnouncement/StorageInfoView.vue")
+        },
+        {
+          path:'categories',
+          component: () => import ("../views/categories/CategoryView.vue")
         }
       ]
     },
     {
-      path: "/auth",
-      component: ()=>import("../layouts/AuthLayout.vue"),
-      redirect: "/auth/login",
-      children: [
+      path : '/auth',
+      component : () => import ("../layouts/AuthLayout.vue"),
+      redirect:"../auth/login",
+      children:
+      [
         {
-          path: "login",
-          component: ()=>import("../views/auth/LoginView.vue")
+          path:'login',
+          component: ()=> import ("../views/auth/LoginView.vue")
         }
       ]
     }

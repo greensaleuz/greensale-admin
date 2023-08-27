@@ -5,12 +5,14 @@ import IconCalendar from "../../components/icons/interface/iconCalendar.vue";
 import IconCalendarEdit from "../../components/icons/interface/iconCalendarEdit.vue";
 import {formatDate} from "@/helpers/DateHelper";
 import axios from '@/plugins/axios'
-import { defineComponent } from "vue";
+import { formatDate } from '@/helpers/DataHelper'
+import { defineComponent } from 'vue'
+import deleteComponent from './CategoryDeleteComponent.vue'
+import editComponent from './CategoryEditComponenta.vue'
 
 export default defineComponent({
-    components:{
-        IconEdit, IconDelete, 
-        IconCalendar, IconCalendarEdit   
+  components: {
+    deleteComponent, editComponent
     },
     props: {
         id: Number,
@@ -21,52 +23,51 @@ export default defineComponent({
         updatedAt: Date
     },
     data() {
-      return{
-        baseURL: "" as String,
-        imageFullPath: "" as String,
-        createdAtString: "" as String,
-        updatedAtString: "" as String
+    return {
+      baseURL: '' as String,
+      createdAtString: '' as String,
+      updatedAtString: '' as String
       }
     },
     methods: {
-      load(){
-        this.baseURL = axios.defaults.baseURL!;
-        this.imageFullPath = this.baseURL+"/"+this.imagePath;
-        this.createdAtString = formatDate(this.createdAt!);
-        this.updatedAtString = formatDate(this.updatedAt!);
+    load() {
+      this.baseURL = axios.defaults.baseURL!
+      this.createdAtString = formatDate(this.createdAt!)
+      this.updatedAtString = formatDate(this.updatedAt!)
       },
     },
     mounted() {
-        this.load();
+    this.load()
     }
-});
+})
 </script>
 
 <template>
-    <div class="card flex border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <div class="flex-none w-64">
-          <img style="height: 100%; width: 100%; object-fit: cover;" class="rounded-lg"
-            v-bind:src ="imageFullPath"/>
+  <div
+    class="flex w-full px-5 bg-gray-50 my-5 divide-y divide-gray-100 rounded shadow dark:bg-gray-900 dark:divide-gray-600"
+  >
+    <div class="flex-auto">
+      <a href="#" class="p-1">
+        <h3 class="text-3xl pb-1 font-semibold tracking-tight text-gray-900 dark:text-white">
+          {{ name }}
+        </h3>
+      </a>
+      <p class="p-1 text-sm tracking-tight text-gray-900 dark:text-white">{{ createdAtString }}</p>
+      <p class="p-1 mb-2 text-sm tracking-tight text-gray-900 dark:text-white">
+        {{ updatedAtString }}
+      </p>
         </div>
-        <div class="flex-auto p-4">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ name }}</h5>
-          <p class="font-normal text-gray-700 dark:text-gray-400">{{ description }}</p>
-          <div class="flex flex-wrap items-center mt-5 mb-5">
-            <IconCalendar></IconCalendar>
-            <p class="me-5 mx-1 font-normal bold text-gray-700 dark:text-gray-400">{{ createdAtString }}</p>
-            <IconCalendarEdit></IconCalendarEdit>
-            <p class="mx-1 font-normal bold text-gray-700 dark:text-gray-400">{{ updatedAtString }}</p>
-          </div>
-        </div>
-        <div class="flex-none w-16">
-          <button type="button"
-            class="mt-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            <IconEdit></IconEdit>
-          </button>
-          <button type="button"
-            class="mt-5 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
-            <IconDelete></IconDelete>
-          </button>
+    <div class="flex-none pt-8 justify-center mb-1">
+     <editComponent
+     :nameProp=name
+     :idProp=id>
+
+     </editComponent>
+      <deleteComponent 
+      :idcategory=id
+      >
+      </deleteComponent>
+     
         </div>
       </div>
 </template>

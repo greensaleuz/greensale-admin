@@ -1,10 +1,20 @@
 <template>
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <rect x="0" y="0" width="24" height="24"/>
-            <circle fill="currentColor" opacity="0.3" cx="12" cy="12" r="10"/>
-            <rect fill="currentColor" x="11" y="10" width="2" height="7" rx="1"/>
-            <rect fill="currentColor" x="11" y="7" width="2" height="2" rx="1"/>
-        </g>
-    </svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="24px"
+    height="24px"
+    viewBox="0 0 24 24"
+    version="1.1"
+  >
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <polygon points="0 0 24 0 24 24 0 24" />
+      <rect fill="currentColor" opacity="0.3" x="2" y="5" width="20" height="2" rx="1" />
+      <rect fill="currentColor" opacity="0.3" x="2" y="17" width="20" height="2" rx="1" />
+      <rect fill="currentColor" opacity="0.3" x="2" y="9" width="5" height="2" rx="1" />
+      <rect fill="currentColor" opacity="0.3" x="16" y="13" width="6" height="2" rx="1" />
+      <rect fill="currentColor" opacity="0.3" x="9" y="9" width="13" height="2" rx="1" />
+      <rect fill="currentColor" opacity="0.3" x="2" y="13" width="12" height="2" rx="1" />
+    </g>
+  </svg>
 </template>

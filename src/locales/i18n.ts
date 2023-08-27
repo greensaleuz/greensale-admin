@@ -1,7 +1,7 @@
 import { createI18n } from "vue-i18n";
 import uz from "./uz.json";
 import ru from "./ru.json";
-import en from "./eng.json";
+import en from "./en.json";
 
 export const defaultlocale: string = "uz";
 

@@ -5,4 +5,5 @@ export class LoginDto{
         this.phoneNumber="";
         this.password="";
     }
+
 }
