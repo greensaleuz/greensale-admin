@@ -69,6 +69,7 @@ export default defineComponent({
         style="width: 290px; height: 200px"
       />
     </a>
+    </div>
 
     <div class="">
       <div class="flex">
