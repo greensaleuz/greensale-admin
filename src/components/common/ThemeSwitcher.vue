@@ -9,10 +9,6 @@ if (
 } else {
   currentThemeIsDark = ref(false)
     } 
-    else {
-        currentThemeIsDark = ref(false);
-    }
-
     function changeTheme() {
   currentThemeIsDark.value = !currentThemeIsDark.value
   if (currentThemeIsDark.value) {

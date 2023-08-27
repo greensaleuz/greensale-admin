@@ -32,9 +32,6 @@ export default defineComponent({
       } else {
         this.existsError = true
       }
-      else {
-        this.existsError = true;
-      }
     },
     dismissErrors() {
       this.existsError = false
@@ -48,8 +45,7 @@ export default defineComponent({
   <section class="bg-white height_ dark:bg-gray-800 for-width pt-5 pb-2">
     <div
       class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0 for-form-width"
-      style="width: 430px;"
-    >
+      style="width: 430px;">
     <a class="flex mx-20 md:mr-24 my-3 m">
           <img src="../../assets/logo/SVG/Artboard.svg" class="h-12 mr-3 " alt="" />
           <p class=" text-xl pt-2   font-bold sm:text-2xl whitespace-nowrap dark:text-white">Green Sale</p>
@@ -161,6 +157,7 @@ export default defineComponent({
           </svg>
         </button>
       </div>
+    </div>
     </div>
 
     <!-- begin :: end-->
