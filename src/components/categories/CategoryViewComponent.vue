@@ -5,7 +5,6 @@ import IconCalendar from "../../components/icons/interface/iconCalendar.vue";
 import IconCalendarEdit from "../../components/icons/interface/iconCalendarEdit.vue";
 import {formatDate} from "@/helpers/DateHelper";
 import axios from '@/plugins/axios'
-import { formatDate } from '@/helpers/DataHelper'
 import { defineComponent } from 'vue'
 import deleteComponent from './CategoryDeleteComponent.vue'
 import editComponent from './CategoryEditComponenta.vue'
