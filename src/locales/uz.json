@@ -62,5 +62,7 @@
     "a":"Bir yillik e'lonlar soni",
     "b":"Bir yillik olingan e'lonlar soni",
     "c":"Band qilinmagan e'lonlar soni",
-    "d":"Foydalanuvchilar soni"
+    "d":"Foydalanuvchilar soni",
+
+    "postdleteaccess":"Haqiqatan ham bu e'lonni oʻchirib tashlamoqchimisiz?"
     }

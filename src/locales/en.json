@@ -62,7 +62,7 @@
 "a":"Number of announcements per year",
 "b":"Number of ads received per year",
 "c":"Number of unbooked ads",
-"d":"Number of users"
+"d":"Number of users",
 
-
+"postdleteaccess":"Are you sure you want to delete this announcement?"
 }
