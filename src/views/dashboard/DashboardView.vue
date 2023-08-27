@@ -98,7 +98,7 @@ export default defineComponent({
   <!--end:: Dashboard-->
   <div id="chart">
     <apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart>
-  </div>
+   </div>
 
   <ul>
     <DashboardViewComponent :apiData="apiBuyerCount" :countUser="apiUserCount" :countSeller="apiSellerCount"

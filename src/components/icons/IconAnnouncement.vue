@@ -29,5 +29,5 @@
         opacity="0.3"
       />
     </g>
-  </svg>
+</svg>
 </template>

@@ -7,3 +7,6 @@ import FlowbiteSetup from './FlowbiteSetup.vue'
    <FlowbiteSetup/>
    <RouterView />   <ThemeSetter/>
 </template>
+
+<style scoped>
+</style>
