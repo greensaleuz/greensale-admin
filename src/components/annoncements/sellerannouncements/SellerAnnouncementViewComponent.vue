@@ -70,7 +70,7 @@ export default defineComponent({
     <div class="">
       <div class="flex">
         <IconLocation class="pt-1"></IconLocation>
-        <div class="flex pt-1 gapp">
+        <div class="flex pt-1"   style="width: 265px;">
           <h5 class="mb-2 text-sm  tracking-tight text-gray-600 dark:text-gray-200">
             {{ district }}
           </h5>
@@ -83,7 +83,8 @@ export default defineComponent({
         <div>
       <h4 class=" text-3xl tracking-tight text-black dark:text-white px-2">{{ title }}</h4>
       <h4 class=" text-xl tracking-tight black dark:text-white px-2">{{ price }} so'm dan {{ capacity }}{{ capacityMeasure }}</h4>
-      <p class=" font-normal text-gray-700 dark:text-gray-400 px-2">{{ description }}</p>
+      <p class=" font-normal text-gray-700 dark:text-gray-400 px-2"        
+      style="width: 290px;">{{ description }}</p>
       </div>
       <button 
       @click="exit"
