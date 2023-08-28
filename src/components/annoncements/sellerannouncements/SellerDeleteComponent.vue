@@ -22,7 +22,6 @@
                 this.showDeleteModal = false;
             },
             async confirmDelete() {
-     
                 this.Idd = localStorage.getItem('sellerById')
                 const response = await axios.delete("/api/admin/seller/post/"+this.Idd);
                 console.log(response);

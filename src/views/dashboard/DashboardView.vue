@@ -2,6 +2,7 @@
 import { defineComponent } from 'vue'
 import DashboardViewComponent from '@/components/dashboard/DashboardViewComponent.vue'
 import axios from '@/plugins/axios'
+import { getToken } from '../../helpers/TokenHelper'
 
 export default defineComponent({
   components: {
@@ -10,7 +11,6 @@ export default defineComponent({
   methods: {
     async getDataAsync() {
       try {
-        debugger;
         const resBuyerCount = await axios.get('api/common/buyer/posts/count')
         const resSellerCount = await axios.get('api/common/seller/post/count')
         const resStorageCount = await axios.get('api/common/storage/count')

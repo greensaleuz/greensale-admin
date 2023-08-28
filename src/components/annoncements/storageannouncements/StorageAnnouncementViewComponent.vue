@@ -39,7 +39,7 @@ export default defineComponent({
   },
   methods: {
     async load() {
-      debugger;
+
       this.baseURL = axios.defaults.baseURL!;
       this.imageFullPath = this.baseURL + '//' + this.imagePath;
       console.log(this.imageFullPath);
@@ -47,7 +47,6 @@ export default defineComponent({
       this.updatedAtString = formatDate(this.updatedAt!)
     },
     exit(){
-      debugger;
       localStorage.setItem("sellerById",this.id);
       this.$router.push('storageinformation')
 

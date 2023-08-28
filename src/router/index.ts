@@ -18,8 +18,14 @@ const router = createRouter({
           component : () => import ("../views/admins/AdminView.vue")
         },
         {
+          name: "user",
           path:'users',
           component : () => import ("../views/users/UserView.vue")
+        },
+        {
+          name: "userId",
+          path:'users/:id',
+          component : () => import ("../views/users/_id.vue")
         },
         {
           path:'buyerannnouncements',
@@ -48,7 +54,11 @@ const router = createRouter({
         {
           path:'categories',
           component: () => import ("../views/categories/CategoriesView.vue")
-        }
+        },
+        // {
+        //   path:'userinfo',
+        //   component: () => import ("../views/users/UserInfoView.vue")
+        // }
       ]
     },
     {
@@ -66,4 +76,9 @@ const router = createRouter({
   ]
 })
 
+// router.beforeEach((to, from) => {
+//   // ...
+//   // explicitly return false to cancel the navigation
+//   return false
+// })
 export default router
