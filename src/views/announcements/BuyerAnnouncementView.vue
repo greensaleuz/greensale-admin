@@ -16,13 +16,17 @@ export default defineComponent({
   },
   methods: {
     async getDataAsync() {
+     var token =  getToken()
+     if( token === undefined){
+        this.$router.push("/auth/login");
+     }
       var response = await axios.get<BuyerAnnouncementViewModel[]>('/api/common/buyer/posts?page=1')
       this.postsList = response.data
       console.log(this.postsList)
     }
   },
   setup() {
-    
+
   },
   async mounted() {
     await this.getDataAsync()

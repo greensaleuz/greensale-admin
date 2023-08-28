@@ -5,7 +5,7 @@ import { formatDate } from '../../../helpers/DateHelper'
 import { SellersPostByIdViewModel } from '../../../viewmodels/SellerPostByIdViewModel'
 import axios from '@/plugins/axios'
 import FlowbiteSetUp from '../../../FlowbiteSetup.vue'
-
+import { SellerUpdateDto } from '../../../dtos/SellerPostUpdateDtos'
 
 export default defineComponent({
   components: {
@@ -21,7 +21,7 @@ export default defineComponent({
       postList: [] as SellersPostByIdViewModel,
       fullName: '',
       id: 0,
-      Id: null,
+      Idd: 0,
       userId: '',
       userPhoneNumber: '',
       postPhoneNumber: '',
@@ -41,7 +41,7 @@ export default defineComponent({
       postImages: [],
       test: false as boolean,
       Idd: 0,
-      statusString:'' as String
+      statusString: '' as String
     }
   },
 
@@ -59,27 +59,65 @@ export default defineComponent({
       this.fullName = this.postList.fullName
     },
     openModal() {
-
-        this.postPhoneNumber=this.postList.postPhoneNumber
-        this.price=this.postList.price
-        this.capacity=this.postList.capacity
-        this.capasitymeasure=this.postList.capacityMeasure
-        this.region=this.postList.region
-        this.district=this.postList.district
-        this.type=this.postList.type
-        this.description=this.postList.description
-        if(this.postList.status==0)
-        {
-            this.statusString="Yangi"
-            this.status=this.statusString
-        }
-        this.showModal = true;
+      this.postPhoneNumber = this.postList.postPhoneNumber
+      this.price = this.postList.price
+      this.capacity = this.postList.capacity
+      this.capasitymeasure = this.postList.capacityMeasure
+      this.region = this.postList.region
+      this.district = this.postList.district
+      this.type = this.postList.type
+      this.description = this.postList.description
+      if (this.postList.status == 0) {
+        this.statusString = 'Yangi'
+        this.status = this.statusString
+      }
+      this.showModal = true
     },
-    closeModal() {
-        this.showModal = false;
-    },
-    async UpdateAsync(){
+    async closeModal() {
+    //   var sellerUpdateDto = new SellerUpdateDto()
+    //   sellerUpdateDto.title = this.title
+    //   sellerUpdateDto.description = this.description
+    //   sellerUpdateDto.capacity = this.capacity
+    //   sellerUpdateDto.capacityMeasure = this.capacityMeasure
+    //   sellerUpdateDto.postPhoneNumber = this.postPhoneNumber
+    //   sellerUpdateDto.region = this.region
+    //   sellerUpdateDto.district = this.district
 
+    //   const formData = new FormData()
+    //   formData.append("Title",this.title)
+    //   formData.append("Description",this.description)
+    //   formData.append("Capacity",this.capacity)
+    //   formData.append("CapacityMeasure",this.capacityMeasure)
+    //   formData.append("PhoneNumber",this.postPhoneNumber)
+    //   formData.append("Region",this.region)
+    //   formData.append("District",this.district)
+    //   formData.append("Type",this.type)
+    //   formData.append("Price",this.price)
+    //   this.Idd=localStorage.getItem('sellerById')
+    //   const responce = await axios.put('/api/admin/seller/post/' + this.Idd, formData)
+    //   if (responce.status == 200) {
+    //             location.reload();
+    //             this.closeModal();
+    //         }
+      this.showModal = false
+    },
+    async UpdateAsync() {
+        const formData = new FormData()
+      formData.append("Title",this.title)
+      formData.append("Description",this.description)
+      formData.append("Capacity",this.capacity)
+      formData.append("CapacityMeasure",this.capasitymeasure)
+      formData.append("PhoneNumber",this.postPhoneNumber)
+      formData.append("Region",this.region)
+      formData.append("District",this.district)
+      formData.append("Type",this.type)
+      formData.append("Price",this.price)
+      this.Idd=localStorage.getItem('sellerById')
+      const responce = await axios.put('/api/admin/seller/post/' + this.Idd, formData)
+      if (responce.status == 200) {
+                location.reload();
+                this.closeModal();
+            }
     }
   },
   setup() {},
@@ -109,7 +147,7 @@ export default defineComponent({
     aria-hidden="true"
     class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
   >
-    <div  class="relative w-full max-w-2xl max-h-full">
+    <div class="relative w-full max-w-2xl max-h-full">
       <!-- Modal content -->
       <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
         <button
@@ -139,9 +177,7 @@ export default defineComponent({
             {{ $t('postinfoubdate') }}
           </h3>
           <form class="space-y-6" action="#">
-            
             <div class="grid gap-6 mb-6 md:grid-cols-2">
-               
               <div>
                 <label
                   for="last_name"
@@ -158,25 +194,22 @@ export default defineComponent({
                 />
               </div>
               <div>
-                <label
-                
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >{{ $t('price') }}</label
-                >
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{
+                  $t('price')
+                }}</label>
                 <input
-                v-model="price"
+                  v-model="price"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder=""
                   required
                 />
               </div>
               <div>
-                <label
-                  class=" mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >{{ $t('capacity') }}</label
-                >
+                <label class="mb-2 text-sm font-medium text-gray-900 dark:text-white">{{
+                  $t('capacity')
+                }}</label>
                 <input
-                v-model="capacity"
+                  v-model="capacity"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder=""
                   required
@@ -189,7 +222,7 @@ export default defineComponent({
                   >{{ $t('capasitymeasure') }}</label
                 >
                 <input
-                 v-model="capasitymeasure"
+                  v-model="capasitymeasure"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder=""
                   required
@@ -202,7 +235,6 @@ export default defineComponent({
                   >{{ $t('region') }}</label
                 >
                 <input
-                  
                   v-model="region"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder=""
@@ -222,40 +254,35 @@ export default defineComponent({
                   required
                 />
               </div>
-             
-
-          
-            
-             
             </div>
-             <div>
-                <label
-                  for="visitors"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >{{ $t('type') }}</label
-                >
-                <input
-                  v-model="type"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder=""
-                  required
-                />
-              </div>
             <div>
-                <label
-                  for="visitors"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >{{ $t('description') }}</label
-                >
-                <input
+              <label
+                for="visitors"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >{{ $t('type') }}</label
+              >
+              <input
+                v-model="type"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder=""
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="visitors"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >{{ $t('description') }}</label
+              >
+              <input
                 v-model="description"
-                  class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder=""
-                  required
-                />
-              </div>
+                class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder=""
+                required
+              />
+            </div>
             <button
-              type="submit"
+              @click="UpdateAsync"
               class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               {{ $t('update') }}
