@@ -21,7 +21,6 @@
                 this.showDeleteModal = false;
             },
             async confirmDelete() {
-                debugger;
                 const response = await axios.delete("/api/admin/categories/"+this.idcategory);
                 console.log("mkkjnjhj"+response.status)
                 console.log("Deleting the category...");

@@ -3,6 +3,7 @@ import { defineComponent } from 'vue'
 import Cookies from 'js-cookie'
 import { formatDate } from '../../helpers/DateHelper'
 import { BuyersPostByIdViewModel } from '@/viewmodels/BuyerPostByIdViewModel'
+import { getToken } from '../../helpers/TokenHelper'
 import axios from '@/plugins/axios'
 
 export default defineComponent({
@@ -41,6 +42,11 @@ export default defineComponent({
   },
   methods: {
     async getDataAsync() { 
+      var token = getToken()
+      if( token === undefined) {
+      this.$router.push("auth/login");
+      }
+
       this.Id = this.$route.query.id_;
       var response = await axios.get<BuyersPostByIdViewModel[]>('/api/common/buyer/posts/'+26)
       this.postList = response.data

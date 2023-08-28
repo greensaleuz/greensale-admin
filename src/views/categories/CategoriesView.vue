@@ -1,7 +1,6 @@
 <script lang="ts">
 import { defineComponent} from 'vue';
 import { CategoryViewModel } from '@/viewmodels/CategoryViewModels';
-import IconCreate from '@/components/icons/interface/iconCreate.vue';
 import CategorySkeletonComponent from "@/components/categories/CategorySkeletonComponent.vue";
 import CategoryViewComponent from "@/components/categories/CategoryViewComponent.vue";
 import CategoryCreateComponent from '../../components/categories/CategoryCreateComponent.vue'
