@@ -45,8 +45,8 @@ export default defineComponent({
       this.updatedAtString = formatDate(this.updatedAt!)
     },
     exit(){
-      this.$router.push('sellerinformation')
       localStorage.setItem("sellerById",this.id);
+      this.$router.push('sellerinformation')
     }
   },
   mounted() {
@@ -62,11 +62,10 @@ export default defineComponent({
     <a href="#">
       <img
         class="rounded-t-lg w-full"
-        v-bind:src="imageFullPath"
+        :src="imageFullPath"
         style="width: 290px; height: 200px"
       />
     </a>
-
     <div class="">
       <div class="flex">
         <IconLocation class="pt-1"></IconLocation>
@@ -74,7 +73,7 @@ export default defineComponent({
           <h5 class="mb-2 text-sm  tracking-tight text-gray-600 dark:text-gray-200">
             {{ district }}
           </h5>
-          <h5 class="mb-2 pt-1 text-xs  tracking-tight text-gray-600 dark:text-gray-200">
+          <h5 class="mb-2 pt-1 text-xs mx-3  tracking-tight text-gray-600 dark:text-gray-200" style="margin-left:auto;">
             {{ updatedAtString }}
           </h5>
         </div>
@@ -89,7 +88,6 @@ export default defineComponent({
       <button 
       @click="exit"
       type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm  py-1  text-center px-2 mx-2  mt-1 mb-3">{{ $t('koproq_malumot') }}</button>
-
     </div>
   </div>
 </template>

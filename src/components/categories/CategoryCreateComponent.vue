@@ -1,9 +1,10 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import axios from "../../plugins/axios";
+import FlowbiteSetup from "../../FlowbiteSetup.vue";
 export default defineComponent({
     components: {
-
+      FlowbiteSetup
     },
     data() {
         return {
@@ -38,6 +39,7 @@ export default defineComponent({
 });
 </script>
 <template>
+  <FlowbiteSetup></FlowbiteSetup>
  <div class="flex w-100 justify-end">
     <div class="flex-none pt-8 justify-center mb-1">
       <button

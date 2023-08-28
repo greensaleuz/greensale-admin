@@ -23,10 +23,10 @@
             },
             async confirmDelete() {
      
-                this.Idd = localStorage.getItem('sellerById')
-                const response = await axios.delete("/api/admin/seller/post/"+this.Idd);
+                this.Idd = localStorage.getItem('buyerById')
+                const response = await axios.delete("/api/admin/buyer/post/"+this.Idd);
                 console.log(response);
-                this.$router.push('sellerannouncements');
+                this.$router.push('buyerannouncements');
                 this.closeDeleteModal();
                 location.reload();
             }

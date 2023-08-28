@@ -3,7 +3,7 @@ export class SellerAnnouncementViewModel{
     fullName: String = "l";
     userPhoneNumber: String = "";
     postPhoneNumber: String="";
-    categoryName: String = "";
+    categoryId: Number = 0;
     title: String = "";
     description: String = "";
     price: Number = 0;

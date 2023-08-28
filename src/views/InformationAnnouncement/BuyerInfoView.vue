@@ -4,20 +4,22 @@ import Cookies from 'js-cookie'
 import { formatDate } from '../../helpers/DateHelper'
 import { BuyersPostByIdViewModel } from '@/viewmodels/BuyerPostByIdViewModel'
 import axios from '@/plugins/axios'
+import FlowbiteSetup from '../../FlowbiteSetup.vue'
+import deleteComponent from '../../components/annoncements/buyerannouncements/BuyerDeleteComponenta.vue'
 
 export default defineComponent({
   components: {
+    FlowbiteSetup, deleteComponent
   },
   props: {
-    createdAt: Date,
-    updatedAt: Date
+     createdAt: Date,
+     updatedAt: Date
   },
   data() {
     return {
       postList: [] as BuyersPostByIdViewModel,
       fullName: "",
       id: 0,
-      Id: null,
       userId: "",
       userPhoneNumber: "",
       postPhoneNumber: "",
@@ -35,18 +37,20 @@ export default defineComponent({
       createdAt: "",
       status: 0,
       buyerPostsImages:[],
-      createdAtString: '' as String,
-      updatedAtString: '' as String
+       createdAtString: '' as String,
+       updatedAtString: '' as String
     }
   },
   methods: {
     async getDataAsync() { 
-      this.Id = this.$route.query.id_;
-      var response = await axios.get<BuyersPostByIdViewModel[]>('/api/common/buyer/posts/'+26)
+      this.Idd = localStorage.getItem('buyerById')
+      var response = await axios.get<BuyersPostByIdViewModel[]>(
+        '/api/common/buyer/posts/' + this.Idd
+      )
       this.postList = response.data
       console.log(this.postList)
-      this.createdAtString = formatDate(this.createdAt!)
-      this.updatedAtString = formatDate(this.updatedAt!)
+       this.createdAtString = formatDate(this.createdAt!)
+       this.updatedAtString = formatDate(this.updatedAt!)
     },
     created() {
    
@@ -62,7 +66,7 @@ export default defineComponent({
 </script>
 
 <template>
-  
+  <FlowbiteSetup></FlowbiteSetup>
 
   <h1 class="text-2xl m-1 text-gray-900 dark:text-gray-100">{{  $t('buyerpostinformation') }}</h1>
   <div class="flex" style="gap:30px;  " >
@@ -75,8 +79,8 @@ export default defineComponent({
 <label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('capasitymeasure') }}: {{  postList.capacityMeasure }}</label>
 <label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('region') }}: {{  postList.region }}</label>
 <label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('district') }}: {{  postList.district }}</label>
-<label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('createdAt') }}: {{  postList.createdAtString }}</label>
-<label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('updated') }}: {{  postList.updatedAtString }}</label>
+<label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('createdAt') }}: {{  postList.createdAt }}</label>
+<label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('updated') }}: {{  postList.updatedAt }}</label>
 <label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('status') }}: {{  postList.status }}</label>
 <label class="px-2 py-1 my-1  text-sm text-gray-900 border border-gray-200 rounded-lg  bg-gray-50 dark:text-gray-300  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">{{ $t('description') }}: {{  postList.description }}</label>
 
@@ -158,8 +162,7 @@ export default defineComponent({
   <!--begin:: buttons-->
   <div class="w-96 flex " style="gap: 10px;">
   <button type="button" class="my-5 w-full text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center  mb-2">{{ $t('edit') }}</button>
-  <button type="button" class="my-5 w-full text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center  mb-2">{{ $t('delete') }}</button>
-    <!--end:: buttons-->
+  <deleteComponent ></deleteComponent> <!--end:: buttons-->
   
   </div>
 </div>

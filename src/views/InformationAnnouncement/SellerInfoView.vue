@@ -9,12 +9,13 @@ import FlowbiteSetUp from '../../FlowbiteSetup.vue'
 import InformationView from '../informations/InformationView.vue'
 import { threadId } from 'worker_threads'
 import deleteComponent from '@/components/annoncements/sellerannouncements/SellerDeleteComponent.vue'
-
+import editComponent from '../../components/annoncements/sellerannouncements/SellerEditComponent.vue'
 export default defineComponent({
   components: {
     InformationView,
     FlowbiteSetUp,
-    deleteComponent
+    deleteComponent,
+    editComponent
   },
   props: {
     createdAtString: Date,
@@ -44,7 +45,8 @@ export default defineComponent({
       status: 0,
       postImages: [],
       test: false as boolean,
-      Idd: 26
+      Idd: 26,
+      statusString: "" 
     }
   },
   methods: {
@@ -57,6 +59,12 @@ export default defineComponent({
       console.log(this.postList)
       this.createdAtString = formatDate(this.createdAt!)
       this.updatedAtString = formatDate(this.updatedAt!)
+
+      if(this.postList.status==0)
+        {
+            this.statusString="Yangi"
+        }
+        this.showModal = true;
     },
     deletedAsync() {}
   },
@@ -75,7 +83,7 @@ export default defineComponent({
       <div class="w-full pt-1 flex" style="flex-direction: column">
         <label
           class="px-2 py-1 mb-1 text-sm text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-          >{{ $t('fullname') }}: {{ fullName }}</label
+          >{{ $t('fullname') }}: {{ postList.fullName }}</label
         >
         <label
           class="px-2 py-1 my-1 text-sm text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
@@ -108,15 +116,15 @@ export default defineComponent({
         >
         <label
           class="px-2 py-1 my-1 text-sm text-gray-900 border border-gray-200 rounded-lg bg-gray-50 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-          >{{ $t('createdAt') }}: {{ createdAtString }}</label
+          >{{ $t('createdAt') }}: {{ postList.createdAt }}</label
         >
         <label
           class="px-2 py-1 my-1 text-sm text-gray-900 border border-gray-200 rounded-lg bg-gray-50 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-          >{{ $t('updated') }}: {{ updatedAtString }}</label
+          >{{ $t('updated') }}: {{ postList.updatedAt }}</label
         >
         <label
           class="px-2 py-1 my-1 text-sm text-gray-900 border border-gray-200 rounded-lg bg-gray-50 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-          >{{ $t('status') }}: {{ postList.status }}</label
+          >{{ $t('status') }}: {{ statusString }}</label
         >
         <label
           class="px-2 py-1 my-1 text-sm text-gray-900 border border-gray-200 rounded-lg bg-gray-50 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
@@ -196,12 +204,7 @@ export default defineComponent({
         </div>
         <!--begin:: buttons-->
         <div class="w-96 flex" style="gap: 10px">
-          <button
-            type="button"
-            class="my-5 w-full text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2"
-          >
-            {{ $t('edit') }}
-          </button>
+         <editComponent></editComponent>
          <deleteComponent></deleteComponent>
          
         

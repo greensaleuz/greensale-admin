@@ -21,7 +21,9 @@ export default defineComponent({
       console.log(this.postsList)
     }
   },
-  setup() {},
+  setup() {
+    
+  },
   async mounted() {
     await this.getDataAsync()
   }
