@@ -114,10 +114,11 @@ export default defineComponent({
       formData.append("Price",this.price)
       this.Idd=localStorage.getItem('sellerById')
       const responce = await axios.put('/api/admin/seller/post/' + this.Idd, formData)
-      if (responce.status == 200) {
-                location.reload();
-                this.closeModal();
-            }
+      
+    //   if (responce.status == 200) {
+    //             location.reload();
+    //             this.closeModal();
+    //         }
     }
   },
   setup() {},
