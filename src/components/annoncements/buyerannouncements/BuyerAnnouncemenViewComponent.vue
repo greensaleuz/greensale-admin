@@ -46,6 +46,7 @@ export default defineComponent({
       this.updatedAtString = formatDate(this.updatedAt!)
     },
     exit(){
+      localStorage.setItem("buyerById",this.id);
       this.$router.push('buyerinformation')
     }
   },

@@ -29,7 +29,7 @@ export default defineComponent({
         {
                 const formData = new FormData();
                 formData.append("Name", this.categoryName);
-                const responce = await axios.put("/api/admin/categories/"+this.idProp, formData);
+                const responce = await axios.put("/api/admin/categories/" + this.idProp, formData);
                 console.log(responce.status);
                 if (responce.status == 200) {
                 location.reload();
