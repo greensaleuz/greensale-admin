@@ -1,12 +1,12 @@
 export class LoginDto{
-    title:String;
-    postPhoneNumber: String;
-    description:String;
-    price:String;
-    capacity:Number;
+    title:string;
+    postPhoneNumber: string;
+    description:string;
+    price:string;
+    capacity:number;
     capacityMeasure:String;
-    type:String;
-    district:String;
+    type:string;
+    district:string;
     constructor() {
         this.title="";
         this.postPhoneNumber="";
