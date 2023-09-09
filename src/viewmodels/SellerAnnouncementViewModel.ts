@@ -1,20 +1,20 @@
 export class SellerAnnouncementViewModel{
-    id:Number = 0;
-    fullName: String = "l";
-    userPhoneNumber: String = "";
-    postPhoneNumber: String="";
-    categoryId: Number = 0;
-    title: String = "";
-    description: String = "";
-    price: Number = 0;
-    capacity: Number = 0;
-    capacityMeasure: String = "";
-    type: String = "";
-    region:String = "";
-    district: String = "";
-    address: String = "";
-    status: Number = 0;
+    id:number = 0;
+    fullName: string = "l";
+    userPhoneNumber: string = "";
+    postPhoneNumber: string="";
+    categoryId: number = 0;
+    title: string = "";
+    description: string = "";
+    price: number = 0;
+    capacity: number = 0;
+    capacityMeasure: string = "";
+    type: string = "";
+    region:string = "";
+    district: string = "";
+    address: string = "";
+    status: number = 0;
     createdAt: Date=new Date();
     updatedAt: Date=new Date();
-    mainImage: String = "";
+    mainImage: string = "";
 }

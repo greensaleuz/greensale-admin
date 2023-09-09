@@ -1,20 +1,20 @@
 export class BuyerViewModel{
-    id:Number = 0;
-    fullName: String = "";
-    userPhoneNumber: String = "";
-    postPhoneNumber: String = "";
-    categoryName: String = "";
-    title: String = "";
+    id:number = 0;
+    fullName: string = "";
+    userPhoneNumber: string = "";
+    postPhoneNumber: string = "";
+    categoryName: string = "";
+    title: string = "";
     description: String = "";
-    price: Number = 0;
-    capacity: Number = 0;
-    capacityMeasure: String = "";
-    type: String = "";
-    region:String = "";
-    district: String = "";
-    address: String = "";
-    status: Number = 0;
+    price: number = 0;
+    capacity: number = 0;
+    capacityMeasure: string = "";
+    type: string = "";
+    region:string = "";
+    district: string = "";
+    address: string = "";
+    status: number = 0;
     createdAt: Date=new Date();
     updatedAt: Date=new Date();
-    mainImage: String[] = [];
+    mainImage: string[] = [];
 }
