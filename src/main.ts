@@ -8,8 +8,11 @@ import router from './router'
 import i18n from './locales/i18n'
 import VueApexCharts from "vue3-apexcharts";
 
+import Icon from "./assets/Icons/Icon.vue"
 
 const app = createApp(App)
+
+app.component('mainIcons', Icon);
 
 app.use(VueApexCharts);
 app.use(createPinia())
